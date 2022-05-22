@@ -64,6 +64,7 @@
     <Compile Include="Assets/Vibration/Example/VibrationExample.cs" />
     <Compile Include="Assets/Vibration/Vibration.cs" />
     <Compile Include="Assets/Scripts/TileMove.cs" />
+    <Compile Include="Assets/Scripts/Sinewave.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

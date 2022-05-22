@@ -313,6 +313,7 @@
 -r:"Library/Bee/artifacts/900b0aP.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/LevelManager.cs"
+"Assets/Scripts/Sinewave.cs"
 "Assets/Scripts/SongData.cs"
 "Assets/Scripts/TileMove.cs"
 "Assets/Scripts/TouchManager.cs"

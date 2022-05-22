@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - GameManager
     - LevelManager
+    - Sinewave
     - SongData
     - TileMove
     - TouchManager
@@ -86,6 +87,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 6576}
     - Class: 114
       Script: {instanceID: 8514}
+    - Class: 114
+      Script: {instanceID: 24626}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1053,7 +1056,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 561275736fe7b2e6b10dbdd6dc95b19f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Sinewave
   platform: 9
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: /Users/charliewedge/Documents/Unity/Teacher-Tap/Builds/Build 2
+  playerPath: /Users/charliewedge/Documents/Unity/Teacher-Tap/Builds/Build 3

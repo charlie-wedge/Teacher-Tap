@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
 
         float currentTime = GetTime() - timeAtLevelStart; // the time since this level started
 
-        if (tileData[currentTileNum*2] <= currentTime) // are we on or passed the next tile we're suppose to spawn??
+        if (tileData[currentTileNum*2]-((8134/speed)+delayOffset) <= currentTime) // are we on or passed the next tile we're suppose to spawn??
         {
             int tileIndex = tileData[(currentTileNum * 2) + 1];
             print(tileIndex);
@@ -51,10 +51,15 @@ public class LevelManager : MonoBehaviour
 
     public void StartLevel()
     {
+        //int initialTimePeriod = 
+        
         Invoke("PlaySong", ((8134 / speed) / 1000) + delayOffset);
+        //PlaySong();
 
         tileData = songDataScript.GetTileData(newLevelName); // get the timing for the tiles
-        timeAtLevelStart = GetTime();
+        //int firstTileTime = tileData[0];
+
+        timeAtLevelStart = GetTime() + ((8134 / speed) + delayOffset);
         levelIsActive = true;
 
     }
