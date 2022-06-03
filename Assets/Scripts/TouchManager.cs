@@ -26,11 +26,9 @@ public class TouchManager : MonoBehaviour
                 RaycastHit raycastHit;
                 if (Physics.Raycast(raycast, out raycastHit))
                 {
-                    print("Something's hit!");
 
                     if (raycastHit.collider.CompareTag("Tile"))
                     {
-                        print("A tile has been hit!");
                         Vibration.VibratePop();
                         raycastHit.collider.GetComponent<TileMove>().TilePressed();
                     }

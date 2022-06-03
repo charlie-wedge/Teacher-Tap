@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     public Transform tileParent;
 
     public SongData songDataScript;
+    public Score scoreScript;
 
     [HideInInspector]
     public string newLevelName; // the name of the level, this should be set before the StartLevel() function is called
@@ -29,7 +30,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -37,23 +38,14 @@ public class LevelManager : MonoBehaviour
     {
         if (!levelIsActive) return;
 
-        float currentTime = GetTime() - timeAtLevelStart; // the time since this level started
-
-        if (tileData[currentTileNum*2]-((8134/speed)+delayOffset) <= currentTime) // are we on or passed the next tile we're suppose to spawn??
-        {
-            int tileIndex = tileData[(currentTileNum * 2) + 1];
-            print(tileIndex);
-            SpawnTile(tileIndex);
-
-            NextTile();
-        }
+        CheckTile();
     }
 
     public void StartLevel()
     {
         //int initialTimePeriod = 
-        
-        Invoke("PlaySong", ((8134 / speed) / 1000) + delayOffset);
+
+        Invoke("PlaySong", GetDelay(true));
         //PlaySong();
 
         tileData = songDataScript.GetTileData(newLevelName); // get the timing for the tiles
@@ -61,6 +53,8 @@ public class LevelManager : MonoBehaviour
 
         timeAtLevelStart = GetTime() + ((8134 / speed) + delayOffset);
         levelIsActive = true;
+
+        scoreScript.ConfigVariables(tileData.Length);
 
     }
 
@@ -87,31 +81,48 @@ public class LevelManager : MonoBehaviour
 
     private void CheckTile()
     {
+        float currentTime = GetTime() - timeAtLevelStart; // the time since this level started
+
+        if (tileData[currentTileNum * 2] - GetDelay(false) <= currentTime) // are we on or passed the next tile we're suppose to spawn??
+        {
+            int tileIndex = tileData[(currentTileNum * 2) + 1];
+            if (tileIndex >= 0) // it's an actual tile
+            {
+                SpawnTile(tileIndex);
+            }
+            else // it's a command
+            {
+                CheckForCommand(tileIndex);
+            }
+
+
+            NextTile();
+            return;
+        }
+
+
         if (currentTileNum * 2 >= tileData.Length) // check if the song is finished (we have cleared the tileData array)
         {
             print("Song complete!");
             levelIsActive = false;
             return;
         }
-        CheckForCommand();
+
     }
 
 
-    private void CheckForCommand()
+    private void CheckForCommand(int commandNum)
     {
-        if (tileData[currentTileNum * 2] < 0) // is it a command?
+        switch (commandNum)
         {
-            switch (tileData[currentTileNum * 2])
-            {
-                case -1:
-                    print("Increasing speed!");
-                    speed++;
-                    break;
-                default:
-                    Debug.LogAssertion("Unkown command in song data. Please fix this in the songData script");
-                    break;
-            }
-            NextTile();
+            case -1:
+                print("Increasing speed!");
+                speed++;
+                scoreScript.StartNextStage();
+                break;
+            default:
+                Debug.LogAssertion("Unkown command in song data. Please fix this in the songData script");
+                break;
         }
     }
 
@@ -119,5 +130,19 @@ public class LevelManager : MonoBehaviour
     {
         currentTileNum++;
         CheckTile();
+    }
+
+    public float GetDelay(bool seconds)
+    {
+        float res;
+        if (seconds) // seconds
+        {
+            res = ((8134 / speed) / 1000) + delayOffset;
+        }
+        else // milliseconds
+        {
+            res = (8134 / speed) + delayOffset;
+        }
+        return res;
     }
 }
