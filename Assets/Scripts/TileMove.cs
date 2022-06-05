@@ -5,6 +5,7 @@ using UnityEngine;
 public class TileMove : MonoBehaviour
 {
     private float timeAtStart;
+    public int myRow;
     private int mySpeed = LevelManager.speed; // ensures the speed stays contant throughout the life of this tile, regardless if speed changes in the LevelManager script.
     private float zoneZPos = -8.12f; // -8.12 is the z posiiton of the zone
 
@@ -68,8 +69,27 @@ public class TileMove : MonoBehaviour
 
         transform.parent.GetComponent<Score>().ChangeScore(res);
 
+        Vector3 ghostPos;
+        if (res == 3) // if it's a 'perfect' hit
+        { 
+            ghostPos = new Vector3(transform.position.x, transform.position.y, zoneZPos); // spawn at the zone, which creates a satisfying snapping effect
+        }
+        else
+        {
+            ghostPos = transform.position;
+        }
+        Instantiate(GameManager.ghostTile, ghostPos, transform.rotation, transform.parent);
+
+        GameObject highlightObject = GameManager.rowHighlights[myRow]; // get the correct highlight object (for the row)
+        //highlightObject.GetComponent<Renderer>().material.color = GameManager.rowHighlightsColours[res]; // change the colour of the highlight
+        highlightObject.transform.position = transform.position;
+        highlightObject.GetComponent<Animation>().Play("Row Highlights " + res.ToString());
 
         Destroy(gameObject, 0f);
+
+        //gameObject.GetComponent<Animation>().Play("Tile Hit");
+
+        //Destroy(gameObject, 0f);
 
         /*
          * 0 = missed
@@ -82,34 +102,10 @@ public class TileMove : MonoBehaviour
         
     }
 
-    /*
-    private void ChangeScore(int num)
+    public void DestroyTile()
     {
-        float scoreChange = 0;
-
-        switch (num)
-        {
-            case 0: // complete miss (not in zone at all)
-                scoreChange = -0.5f;
-                break;
-            case 1: // half in zone, half not
-                scoreChange = 0.5f;
-                break;
-            case 2: // perfect (completly in zone)
-                scoreChange = 1f;
-                break;
-            case 3: // forgot (didn't tap tile at all)
-                scoreChange = -1f;
-                break;
-            default:
-                Debug.LogWarning("num not recognised - not changing score");
-                break;
-
-        }
-
-        Score.ChangeScore(scoreChange);
-
         Destroy(gameObject, 0f);
     }
-    */
+
 }
+

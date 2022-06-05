@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Destroy
     - GameManager
     - LevelManager
     - Score
@@ -117,41 +118,43 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2126}
+      Script: {instanceID: 2292}
     - Class: 114
-      Script: {instanceID: 2280}
+      Script: {instanceID: 2446}
     - Class: 114
-      Script: {instanceID: 2414}
+      Script: {instanceID: 2580}
     - Class: 114
-      Script: {instanceID: 2740}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 2974}
+      Script: {instanceID: 3140}
     - Class: 114
-      Script: {instanceID: 4298}
+      Script: {instanceID: 4464}
     - Class: 114
-      Script: {instanceID: 4420}
+      Script: {instanceID: 4586}
     - Class: 114
-      Script: {instanceID: 4698}
+      Script: {instanceID: 4864}
     - Class: 114
-      Script: {instanceID: 5358}
+      Script: {instanceID: 5524}
     - Class: 114
-      Script: {instanceID: 5494}
+      Script: {instanceID: 5660}
     - Class: 114
-      Script: {instanceID: 5794}
+      Script: {instanceID: 5960}
     - Class: 114
-      Script: {instanceID: 6126}
+      Script: {instanceID: 6292}
     - Class: 114
-      Script: {instanceID: 6286}
+      Script: {instanceID: 6452}
     - Class: 114
-      Script: {instanceID: 6296}
+      Script: {instanceID: 6462}
     - Class: 114
-      Script: {instanceID: 6382}
+      Script: {instanceID: 6548}
     - Class: 114
-      Script: {instanceID: 6562}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 6656}
+      Script: {instanceID: 6822}
     - Class: 114
-      Script: {instanceID: 8616}
+      Script: {instanceID: 8104}
+    - Class: 114
+      Script: {instanceID: 8784}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -159,6 +162,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -823,7 +830,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: b6ffbdfa7bdb47188086dcd88f7e8e9f
+      Hash: b144f4d80cd36e6dd99c0087d39d200a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelManager
@@ -913,7 +920,7 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: c820629d8c06594732d2e6cda4acec31
+      Hash: dd4f5a548881bde283235ff2fe2361da
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1003,7 +1010,7 @@ ScriptsOnlyBuild:
     className: Benchmark03
   - hash:
       serializedVersion: 2
-      Hash: 73ce092c93e400a39e4d80c1b722f84b
+      Hash: 0da85fb4e9b29ce13584559f8d26fd59
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Score
@@ -1225,6 +1232,12 @@ ScriptsOnlyBuild:
     className: AdaptiveMSAA
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Destroy
+  - hash:
+      serializedVersion: 2
       Hash: 023e1c84ff33489e45cfcca9e19c242b
     assemblyName: Unity.AdaptivePerformance.dll
     namespaceName: UnityEngine.AdaptivePerformance
@@ -1333,7 +1346,7 @@ ScriptsOnlyBuild:
     className: Benchmark01
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 27ab9a17bff0b4e82504b585376060a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TileMove

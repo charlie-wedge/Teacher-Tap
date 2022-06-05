@@ -25,12 +25,18 @@ public class LevelManager : MonoBehaviour
     private int currentTileNum = 0;
 
     public static int speed = 3; // the current speed of the tiles
+    private int beginningSpeed;
     public float delayOffset; // in seconds
+
+    public Sprite[] briggs;
+    public Sprite[] monk;
+    public Sprite[] enslin;
+    public Sprite[] tim;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        beginningSpeed = speed;
     }
 
     // Update is called once per frame
@@ -54,7 +60,7 @@ public class LevelManager : MonoBehaviour
         timeAtLevelStart = GetTime() + ((8134 / speed) + delayOffset);
         levelIsActive = true;
 
-        scoreScript.ConfigVariables(tileData.Length);
+        scoreScript.ConfigVariables((tileData.Length-3)/2);
 
     }
 
@@ -77,6 +83,15 @@ public class LevelManager : MonoBehaviour
         float[] positions = new float[] { -1, 0, 1 }; // the three columns
 
         GameObject tileObject = Instantiate(tile, new Vector3(positions[posIndex], tile.transform.position.y, tile.transform.position.z), tile.transform.rotation, tileParent);
+
+        tileObject.GetComponent<TileMove>().myRow = posIndex; // tell the tile which row it's in
+
+        int index = speed - beginningSpeed;
+        if (index >= briggs.Length) // we're at the last stage, so make the image random!
+        {
+            index = UnityEngine.Random.Range(0, briggs.Length);
+        }
+        tileObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = briggs[index]; // set the image of the tile
     }
 
     private void CheckTile()

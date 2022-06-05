@@ -8,7 +8,7 @@ public class Score : MonoBehaviour
     public TMPro.TextMeshProUGUI scoreText;
     public TMPro.TextMeshProUGUI stageText;
     public int score;
-    private int stage = 1;
+    public int stage = 1;
 
     public int maxScore; // the max score that can be earned in the level (the 'perfect' score)
     private int numOfTilesInLevel; // set by the LevelManager script when the level starts
