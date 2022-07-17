@@ -7,6 +7,8 @@ public class Score : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI scoreText;
     public TMPro.TextMeshProUGUI stageText;
+    public Animation stageTextAnimation;
+
     public int score;
     public int stage = 1;
 
@@ -50,6 +52,7 @@ public class Score : MonoBehaviour
         stage++;
         //LevelManager.speed++;
         stageText.text = "Stage " + stage.ToString();
+        stageTextAnimation.Play("Stage Text Jump");
     }
 
     public void ChangeScore(int res) // offset is either 0.5, -0.5, 1, or -1

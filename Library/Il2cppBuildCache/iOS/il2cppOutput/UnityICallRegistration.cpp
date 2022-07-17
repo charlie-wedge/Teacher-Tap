@@ -218,6 +218,14 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.AudioSource
 
+		//System.Boolean UnityEngine.AudioSource::get_isPlaying()
+		void Register_UnityEngine_AudioSource_get_isPlaying();
+		Register_UnityEngine_AudioSource_get_isPlaying();
+
+		//System.Single UnityEngine.AudioSource::get_time()
+		void Register_UnityEngine_AudioSource_get_time();
+		Register_UnityEngine_AudioSource_get_time();
+
 		//System.Void UnityEngine.AudioSource::PlayHelper(UnityEngine.AudioSource,System.UInt64)
 		void Register_UnityEngine_AudioSource_PlayHelper();
 		Register_UnityEngine_AudioSource_PlayHelper();
@@ -225,6 +233,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.AudioSource::set_clip(UnityEngine.AudioClip)
 		void Register_UnityEngine_AudioSource_set_clip();
 		Register_UnityEngine_AudioSource_set_clip();
+
+		//System.Void UnityEngine.AudioSource::set_time(System.Single)
+		void Register_UnityEngine_AudioSource_set_time();
+		Register_UnityEngine_AudioSource_set_time();
 
 	//End Registrations for type : UnityEngine.AudioSource
 
@@ -2535,6 +2547,14 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Rendering_ScriptableRenderContext_GetCameras_Internal_Injected();
 
 	//End Registrations for type : UnityEngine.Rendering.ScriptableRenderContext
+
+	//Start Registrations for type : UnityEngine.RenderSettings
+
+		//System.Void UnityEngine.RenderSettings::set_fogColor_Injected(UnityEngine.Color&)
+		void Register_UnityEngine_RenderSettings_set_fogColor_Injected();
+		Register_UnityEngine_RenderSettings_set_fogColor_Injected();
+
+	//End Registrations for type : UnityEngine.RenderSettings
 
 	//Start Registrations for type : UnityEngine.RenderTexture
 

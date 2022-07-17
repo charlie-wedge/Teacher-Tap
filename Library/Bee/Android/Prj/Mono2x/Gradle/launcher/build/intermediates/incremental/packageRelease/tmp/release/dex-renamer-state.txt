@@ -1,0 +1,4 @@
+#Mon Jun 20 13:16:14 NZST 2022
+base.0=/Users/charliewedge/Documents/Unity/Teacher-Tap/Teacher Tap/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/build/intermediates/dex/release/mergeDexRelease/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
 
         levelManager.newLevelName = "crush";
         Invoke("StartLevel", 0.1f);
+        
     }
 
     // Update is called once per frame

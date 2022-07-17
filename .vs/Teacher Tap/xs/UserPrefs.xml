@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{75977A2F-C688-12D5-EF89-DB09D5337611}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TileMove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EndScreenProgressBar.cs">
     <Files>
       <File FileName="Assets/Scripts/TouchManager.cs" Line="31" Column="22" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="88" Column="140" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="21" Column="48" />
-      <File FileName="Assets/Scripts/SongData.cs" Line="176" Column="22" />
-      <File FileName="Assets/Scripts/TileMove.cs" Line="53" Column="14" />
-      <File FileName="Assets/Scripts/Score.cs" Line="22" Column="111" />
-      <File FileName="Assets/Scripts/Sinewave.cs" Line="47" Column="160" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="27" Column="4" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="40" Column="1" />
+      <File FileName="Assets/Scripts/SongData.cs" Line="280" Column="6" />
+      <File FileName="Assets/Scripts/Score.cs" Line="36" Column="6" />
+      <File FileName="Assets/Scripts/Sinewave.cs" />
+      <File FileName="Assets/Scripts/TileMove.cs" />
+      <File FileName="Assets/Scripts/EndScreenProgressBar.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="865d12b8-19b6-4810-a060-c34332117545" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9d8a855f-464d-41cf-a89b-3a4da86b75a6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

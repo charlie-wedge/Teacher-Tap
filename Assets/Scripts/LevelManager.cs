@@ -2,36 +2,56 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
     public AudioSource audioSource;
 
     public string[] songNames;
-    public AudioClip[] songClips;
 
     public GameObject tile;
     public Transform tileParent;
 
     public SongData songDataScript;
     public Score scoreScript;
+    public EndScreenProgressBar endScreenProgressBarScript;
+
+    public Animation[] endScreenAnimationComponents;
+    public string[] endScreenAnimationNames;
+    public GameObject endScreenEmptyObject;
+    public TMPro.TextMeshProUGUI endScreenScoreText;
+    public TMPro.TextMeshProUGUI endScreenArtistNameText;
+    public TMPro.TextMeshProUGUI endScreenSongNameText;
+    public Image endScreenAlbumArtImage;
+    public RawImage endScreenBackground;
+   
+
 
     [HideInInspector]
     public string newLevelName; // the name of the level, this should be set before the StartLevel() function is called
 
+    private Song songData;
     private int[] tileData;
-    private bool levelIsActive = false;
     private float timeAtLevelStart;
     private int currentTileNum = 0;
+    private bool checkForTiles = false;
 
     public static int speed = 3; // the current speed of the tiles
     private int beginningSpeed;
     public float delayOffset; // in seconds
 
+    public float endLevelDelay; // the delay until the end screen elements show, from after the song has ended
+
     public Sprite[] briggs;
     public Sprite[] monk;
     public Sprite[] enslin;
     public Sprite[] tim;
+
+    private void Awake()
+    {
+        
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,44 +62,54 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!levelIsActive) return;
+        if (checkForTiles)
+        {
+            CheckTile();
+        }
 
-        CheckTile();
+        
     }
 
     public void StartLevel()
     {
-        //int initialTimePeriod = 
 
-        Invoke("PlaySong", GetDelay(true));
-        //PlaySong();
+        songData = songDataScript.GetTileData(newLevelName); // get the timing for the tiles
+        RenderSettings.fogColor = songData.levelColour;
 
-        tileData = songDataScript.GetTileData(newLevelName); // get the timing for the tiles
+        tileData = songData.tileData;
         //int firstTileTime = tileData[0];
 
-        timeAtLevelStart = GetTime() + ((8134 / speed) + delayOffset);
-        levelIsActive = true;
+        timeAtLevelStart = GetRealTime();// ((8134 / speed) + delayOffset);
 
         scoreScript.ConfigVariables((tileData.Length-3)/2);
+
+        checkForTiles = true;
+
+        Invoke("PlaySong", GetDelay(true));
 
     }
 
     private void PlaySong()
     {
-        AudioClip audio = songClips[Array.IndexOf(songNames, newLevelName)]; // get the song clip
+        AudioClip audio = songData.audioClip;
         audioSource.clip = audio; // set the clip to the source in unity
 
         audioSource.Play(); // play the song
         print("Playing audio file");
     }
 
-    private float GetTime()
+    private float GetAudioTime()
+    {
+        return audioSource.time * 1000;
+    }
+    private float GetRealTime()
     {
         return Time.timeSinceLevelLoad * 1000;
     }
 
     private void SpawnTile(int posIndex) // posIndex can be either 0, 1 or 2
     {
+        //print("Spawning tile!");
         float[] positions = new float[] { -1, 0, 1 }; // the three columns
 
         GameObject tileObject = Instantiate(tile, new Vector3(positions[posIndex], tile.transform.position.y, tile.transform.position.z), tile.transform.rotation, tileParent);
@@ -96,33 +126,68 @@ public class LevelManager : MonoBehaviour
 
     private void CheckTile()
     {
-        float currentTime = GetTime() - timeAtLevelStart; // the time since this level started
-
-        if (tileData[currentTileNum * 2] - GetDelay(false) <= currentTime) // are we on or passed the next tile we're suppose to spawn??
+        float currentTime;
+        if (audioSource.isPlaying) // base the timing off the audio
         {
-            int tileIndex = tileData[(currentTileNum * 2) + 1];
-            if (tileIndex >= 0) // it's an actual tile
+            currentTime = GetAudioTime() + GetDelay(false);
+            //print("Audio Time: " + currentTime);
+        }
+        else // base the timing off the real time (because the song hasn't started yet so we ofc can't base it on the audio)
+        {
+            currentTime = GetRealTime() - timeAtLevelStart + 123.34f; // this number could cause problems on other devices?? (The gap between the switch from real time to audio time)
+            //print("Real Time: " + currentTime);
+        }
+   
+        int tileTimeIndex = currentTileNum * 2;
+
+        if (tileTimeIndex >= tileData.Length)
+        {
+            if (!audioSource.isPlaying)
             {
-                SpawnTile(tileIndex);
+                checkForTiles = false;
+                Invoke("EndLevel", endLevelDelay);
+            }
+            return;
+        }
+
+        if (tileData[tileTimeIndex] <= currentTime) // are we on or passed the next tile we're suppose to spawn??
+        {
+            int tilePosIndex = tileData[tileTimeIndex + 1];
+            if (tilePosIndex >= 0) // it's an actual tile
+            {
+                SpawnTile(tilePosIndex);
             }
             else // it's a command
             {
-                CheckForCommand(tileIndex);
+                CheckForCommand(tilePosIndex);
             }
 
 
             NextTile();
             return;
         }
+    }
 
-
-        if (currentTileNum * 2 >= tileData.Length) // check if the song is finished (we have cleared the tileData array)
+    private void EndLevel()
+    {
+        print("Reached the end of the tile data");
+        for (int i = 0; i < endScreenAnimationComponents.Length; i++) // play all the end screen animations at once, (the delays are present in the actual animation itself)
         {
-            print("Song complete!");
-            levelIsActive = false;
-            return;
+            endScreenAnimationComponents[i].Play(endScreenAnimationNames[i]);
+            audioSource.clip = songData.audioClip;
+            audioSource.time = songData.timeAtKeyPoint / 1000;
+            audioSource.Play();
         }
-
+        endScreenEmptyObject.SetActive(true);
+        endScreenScoreText.text = scoreScript.score.ToString("n0");
+        endScreenArtistNameText.text = songData.songArtist;
+        endScreenSongNameText.text = songData.songName;
+        endScreenAlbumArtImage.sprite = songData.albumArt;
+        endScreenBackground.color = songData.levelColour;
+        float score = scoreScript.score;
+        float maxScore = scoreScript.maxScore;
+        float percentage = Mathf.Clamp01(score / maxScore);
+        endScreenProgressBarScript.targetPercentage = percentage;
     }
 
 
@@ -160,4 +225,7 @@ public class LevelManager : MonoBehaviour
         }
         return res;
     }
+
+
+
 }
