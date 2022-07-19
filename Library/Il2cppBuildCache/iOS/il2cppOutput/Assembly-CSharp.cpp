@@ -656,7 +656,8 @@ IL2CPP_EXTERN_C RuntimeClass* WaitForEndOfFrame_tE38D80923E3F8380069B423968C25AB
 IL2CPP_EXTERN_C RuntimeClass* WaitForSecondsU5BU5D_t2A9038ECB6E643745AEF2AD9A4F7FFD3D272186E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WordSelectionEvent_t340E6006406B5E90F7190C56218E8F7E3712945E_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_0_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____38B8F4DAEFD758F97C8C9F318826690DE6C2D198C2190D42E34C1053C96E75C8_0_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_1_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral000A577FA6F1044FCB37680E918D59D0DA3E7DDA;
 IL2CPP_EXTERN_C String_t* _stringLiteral00B28FF06B788B9B67C6B259800F404F9F3761FD;
 IL2CPP_EXTERN_C String_t* _stringLiteral0133981053AC767ED98F641B459173B5499F4EB0;
@@ -674,6 +675,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745
 IL2CPP_EXTERN_C String_t* _stringLiteral269F8BFBE6C7517C00380B92291D0799AAB2F285;
 IL2CPP_EXTERN_C String_t* _stringLiteral2A5808F3B889783C5484106C7296410EA27F30B5;
 IL2CPP_EXTERN_C String_t* _stringLiteral2F5DA3B0D97EAB2CEA1225DB808B037B00B44C39;
+IL2CPP_EXTERN_C String_t* _stringLiteral30A6C72778B1C4CC52499F87E8D7177F9AA8BC14;
 IL2CPP_EXTERN_C String_t* _stringLiteral3783D62DA544C4A10F6775DC60E5A763AA9BED1B;
 IL2CPP_EXTERN_C String_t* _stringLiteral3B2C1C62D4D1C2A0C8A9AC42DB00D33C654F9AD0;
 IL2CPP_EXTERN_C String_t* _stringLiteral3D340328C9A8D4C7396701777F9419AB7A7D1DD7;
@@ -692,6 +694,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral58C793639763D5ACDA24A784554409EEC4A7CAE8
 IL2CPP_EXTERN_C String_t* _stringLiteral598081DBD06E8B1A338629AF7933F9131C6D33AB;
 IL2CPP_EXTERN_C String_t* _stringLiteral5A3D6FC5AC03F283E51A1E494164E2F6D006FCE2;
 IL2CPP_EXTERN_C String_t* _stringLiteral5BCE038453DF85FF006A92CB7BCD69D497342006;
+IL2CPP_EXTERN_C String_t* _stringLiteral602F8B164EF342B0C03360E7AC792D298E0EDD65;
 IL2CPP_EXTERN_C String_t* _stringLiteral63736135281A2E1CBCF570B1EE98F93956390141;
 IL2CPP_EXTERN_C String_t* _stringLiteral663C1FCE184B01DF096F2B8DB221C53F867AE327;
 IL2CPP_EXTERN_C String_t* _stringLiteral69CE07E5C7ADCC833DA3E659BC9009F6C3C1346A;
@@ -741,6 +744,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralCED30D471F9ECB011896E4C24680A6982ECBCAFE
 IL2CPP_EXTERN_C String_t* _stringLiteralD00074DE8ACBEBA7EF28BE447E997E8352E84502;
 IL2CPP_EXTERN_C String_t* _stringLiteralD329E22C83005F002CE492547F6CC64D58B3EDFE;
 IL2CPP_EXTERN_C String_t* _stringLiteralD579F97F4A33C344330AED1285CC5B545618BC19;
+IL2CPP_EXTERN_C String_t* _stringLiteralD6E23828A12ED0A089DF02A0FACD96D281A8C488;
 IL2CPP_EXTERN_C String_t* _stringLiteralD99C319B457682A09D028AF022D0B2EE6B4D48A6;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralDECFB8F380101725B06EAE2D3F983211A277171C;
@@ -4420,12 +4424,18 @@ struct SongData_t4CA18B1FE91BA314FDB31095388B1DCB2E828F46  : public MonoBehaviou
 {
 	// System.Collections.Generic.Dictionary`2<System.String,Song> SongData::levels
 	Dictionary_2_t449B1F319103FEE906F9A5EDBAE1DD5B6CAC4FB4* ___levels_4;
-	// UnityEngine.Color SongData::crushColor
-	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___crushColor_5;
+	// UnityEngine.Color SongData::crushColour
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___crushColour_5;
 	// UnityEngine.AudioClip SongData::crushClip
 	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___crushClip_6;
 	// UnityEngine.Sprite SongData::crushArt
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___crushArt_7;
+	// UnityEngine.Color SongData::theFoxColour
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___theFoxColour_8;
+	// UnityEngine.AudioClip SongData::theFoxClip
+	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___theFoxClip_9;
+	// UnityEngine.Sprite SongData::theFoxArt
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___theFoxArt_10;
 };
 
 // TMPro.Examples.TMP_ExampleScript_01
@@ -7783,12 +7793,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EndScreenProgressBar_UpdateProgress_m280
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_17), L_13, L_16, /*hidden argument*/NULL);
 		NullCheck(L_12);
 		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_12, L_17, NULL);
-		// percentageText.text = Mathf.Floor(percentage*100).ToString() + "%";
+		// percentageText.text = (Mathf.Floor(percentage*1000)/10).ToString() + "%";
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_18 = __this->___percentageText_6;
 		float L_19 = ___percentage0;
 		float L_20;
-		L_20 = floorf(((float)il2cpp_codegen_multiply(L_19, (100.0f))));
-		V_1 = L_20;
+		L_20 = floorf(((float)il2cpp_codegen_multiply(L_19, (1000.0f))));
+		V_1 = ((float)(L_20/(10.0f)));
 		String_t* L_21;
 		L_21 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972((&V_1), NULL);
 		String_t* L_22;
@@ -8045,7 +8055,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_Start_m87A71D65F3171A58DBDDB
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral483153FF33139E28EB8ECA51D60CACDE63EB8D2C);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral30A6C72778B1C4CC52499F87E8D7177F9AA8BC14);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC476EABDFC137F655A90D34AE524578590679AEF);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -8058,11 +8068,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_Start_m87A71D65F3171A58DBDDB
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_1 = __this->___rowHighlightsReference_6;
 		((GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields*)il2cpp_codegen_static_fields_for(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_il2cpp_TypeInfo_var))->___rowHighlights_8 = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&((GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields*)il2cpp_codegen_static_fields_for(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_il2cpp_TypeInfo_var))->___rowHighlights_8), (void*)L_1);
-		// levelManager.newLevelName = "crush";
+		// levelManager.newLevelName = "the fox";
 		LevelManager_t8405886BBC5A0ACBB1CC210E25D5DA1C72D16530* L_2 = __this->___levelManager_4;
 		NullCheck(L_2);
-		L_2->___newLevelName_19 = _stringLiteral483153FF33139E28EB8ECA51D60CACDE63EB8D2C;
-		Il2CppCodeGenWriteBarrier((void**)(&L_2->___newLevelName_19), (void*)_stringLiteral483153FF33139E28EB8ECA51D60CACDE63EB8D2C);
+		L_2->___newLevelName_19 = _stringLiteral30A6C72778B1C4CC52499F87E8D7177F9AA8BC14;
+		Il2CppCodeGenWriteBarrier((void**)(&L_2->___newLevelName_19), (void*)_stringLiteral30A6C72778B1C4CC52499F87E8D7177F9AA8BC14);
 		// Invoke("StartLevel", 0.1f);
 		MonoBehaviour_Invoke_mF724350C59362B0F1BFE26383209A274A29A63FB(__this, _stringLiteralC476EABDFC137F655A90D34AE524578590679AEF, (0.100000001f), NULL);
 		// }
@@ -8186,12 +8196,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelManager_StartLevel_mAB30A182A392DC7
 		float L_7;
 		L_7 = LevelManager_GetRealTime_m7EC3E1B448D5166227477AC8B6E6B7F1F0DAFF6E(__this, NULL);
 		__this->___timeAtLevelStart_22 = L_7;
-		// scoreScript.ConfigVariables((tileData.Length-3)/2);
+		// scoreScript.ConfigVariables(((tileData.Length+1)/2)-3); // +1 because computers count from zero, /2 because each tile uses two indexes, and -3 because there are three commands in the array, which are not tiles
 		Score_t190877D354724EB1BD99FA27F906E19CB8F0C88A* L_8 = __this->___scoreScript_9;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_9 = __this->___tileData_21;
 		NullCheck(L_9);
 		NullCheck(L_8);
-		Score_ConfigVariables_m3E61FB4EFFF21FD20840304703326BAC3C963D0F(L_8, ((int32_t)(((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_9)->max_length)), 3))/2)), NULL);
+		Score_ConfigVariables_m3E61FB4EFFF21FD20840304703326BAC3C963D0F(L_8, ((int32_t)il2cpp_codegen_subtract(((int32_t)(((int32_t)il2cpp_codegen_add(((int32_t)(((RuntimeArray*)L_9)->max_length)), 1))/2)), 3)), NULL);
 		// checkForTiles = true;
 		__this->___checkForTiles_24 = (bool)1;
 		// Invoke("PlaySong", GetDelay(true));
@@ -8333,9 +8343,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelManager_SpawnTile_mE2E9BCD735EF7752
 		int32_t L_25 = ((LevelManager_t8405886BBC5A0ACBB1CC210E25D5DA1C72D16530_StaticFields*)il2cpp_codegen_static_fields_for(LevelManager_t8405886BBC5A0ACBB1CC210E25D5DA1C72D16530_il2cpp_TypeInfo_var))->___speed_25;
 		int32_t L_26 = __this->___beginningSpeed_26;
 		V_1 = ((int32_t)il2cpp_codegen_subtract(L_25, L_26));
-		// if (index >= briggs.Length) // we're at the last stage, so make the image random!
+		// if (index >= enslin.Length) // we're at the last stage, so make the image random!
 		int32_t L_27 = V_1;
-		SpriteU5BU5D_tCEE379E10CAD9DBFA770B331480592548ED0EA1B* L_28 = __this->___briggs_29;
+		SpriteU5BU5D_tCEE379E10CAD9DBFA770B331480592548ED0EA1B* L_28 = __this->___enslin_31;
 		NullCheck(L_28);
 		G_B1_0 = L_22;
 		if ((((int32_t)L_27) < ((int32_t)((int32_t)(((RuntimeArray*)L_28)->max_length)))))
@@ -8345,8 +8355,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelManager_SpawnTile_mE2E9BCD735EF7752
 		}
 	}
 	{
-		// index = UnityEngine.Random.Range(0, briggs.Length);
-		SpriteU5BU5D_tCEE379E10CAD9DBFA770B331480592548ED0EA1B* L_29 = __this->___briggs_29;
+		// index = UnityEngine.Random.Range(0, enslin.Length);
+		SpriteU5BU5D_tCEE379E10CAD9DBFA770B331480592548ED0EA1B* L_29 = __this->___enslin_31;
 		NullCheck(L_29);
 		int32_t L_30;
 		L_30 = Random_Range_mD4D2DEE3D2E75D07740C9A6F93B3088B03BBB8F8(0, ((int32_t)(((RuntimeArray*)L_29)->max_length)), NULL);
@@ -8356,7 +8366,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelManager_SpawnTile_mE2E9BCD735EF7752
 
 IL_009d:
 	{
-		// tileObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = briggs[index]; // set the image of the tile
+		// tileObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = enslin[index]; // set the image of the tile
 		NullCheck(G_B2_0);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_31;
 		L_31 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(G_B2_0, NULL);
@@ -8366,7 +8376,7 @@ IL_009d:
 		NullCheck(L_32);
 		SpriteRenderer_t1DD7FE258F072E1FA87D6577BA27225892B8047B* L_33;
 		L_33 = Component_GetComponent_TisSpriteRenderer_t1DD7FE258F072E1FA87D6577BA27225892B8047B_m6181F10C09FC1650DAE0EF2308D344A2F170AA45(L_32, Component_GetComponent_TisSpriteRenderer_t1DD7FE258F072E1FA87D6577BA27225892B8047B_m6181F10C09FC1650DAE0EF2308D344A2F170AA45_RuntimeMethod_var);
-		SpriteU5BU5D_tCEE379E10CAD9DBFA770B331480592548ED0EA1B* L_34 = __this->___briggs_29;
+		SpriteU5BU5D_tCEE379E10CAD9DBFA770B331480592548ED0EA1B* L_34 = __this->___enslin_31;
 		int32_t L_35 = V_1;
 		NullCheck(L_34);
 		int32_t L_36 = L_35;
@@ -9370,10 +9380,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_t449B1F319103FEE906F9A5EDBAE1DD5B6CAC4FB4_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_0_FieldInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____38B8F4DAEFD758F97C8C9F318826690DE6C2D198C2190D42E34C1053C96E75C8_0_FieldInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_1_FieldInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral30A6C72778B1C4CC52499F87E8D7177F9AA8BC14);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral483153FF33139E28EB8ECA51D60CACDE63EB8D2C);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral48C45586CB7A85968D9C460329C6CD184E43E427);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral602F8B164EF342B0C03360E7AC792D298E0EDD65);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBD60A21B4E02BE694C74E7C1478B7831B2940C7E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD6E23828A12ED0A089DF02A0FACD96D281A8C488);
 		s_Il2CppMethodInitialized = true;
 	}
 	Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* V_0 = NULL;
@@ -9391,7 +9405,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//     songName = "Crush",
 		//     songArtist = "Tessa Violet",
 		//     albumArt = crushArt,
-		//     levelColour = crushColor,
+		//     levelColour = crushColour,
 		//     tileData = new int[]
 		//     {
 		//         2283, 0,
@@ -9666,13 +9680,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		L_8->___albumArt_5 = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&L_8->___albumArt_5), (void*)L_9);
 		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_10 = V_0;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_11 = __this->___crushColor_5;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_11 = __this->___crushColour_5;
 		NullCheck(L_10);
 		L_10->___levelColour_6 = L_11;
 		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_12 = V_0;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_13 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)380));
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_14 = L_13;
-		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_15 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_0_FieldInfo_var) };
+		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_15 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_1_FieldInfo_var) };
 		RuntimeHelpers_InitializeArray_mE10C3436BA703E4D9D41B3F8F365E4C34F9926EF((RuntimeArray*)L_14, L_15, NULL);
 		NullCheck(L_12);
 		L_12->___tileData_0 = L_14;
@@ -9680,6 +9694,427 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_16 = V_0;
 		NullCheck(L_1);
 		Dictionary_2_set_Item_m0DEA6F0AD7695947EC0B4935F2BEEDEAEDEC8D1E(L_1, _stringLiteral483153FF33139E28EB8ECA51D60CACDE63EB8D2C, L_16, Dictionary_2_set_Item_m0DEA6F0AD7695947EC0B4935F2BEEDEAEDEC8D1E_RuntimeMethod_var);
+		// levels["the fox"] = new Song
+		// {
+		//     audioClip = theFoxClip,
+		//     timeAtKeyPoint = 0,
+		//     songName = "The Fox",
+		//     songArtist = "Ylvis",
+		//     albumArt = theFoxArt,
+		//     levelColour = theFoxColour,
+		//     tileData = new int[]
+		//     {
+		//         0, 1,
+		//         1880, 1,
+		//         3720, 1,
+		// 
+		//         8400, 0, // Dog goes woof
+		//         8880, 2,
+		//         9360, 0,
+		// 
+		//         10245, 2, // Cat goes meow
+		//         10748, 0,
+		//         11200, 2,
+		// 
+		//         12157, 0, // Bird goes tweet
+		//         12615, 1,
+		//         13073, 2,
+		// 
+		//         13591, 1, // And mouse goes squeek
+		//         14045, 2,
+		//         14523, 1,
+		//         14960, 0,
+		// 
+		//         15902, 0, // Cow goes moo
+		//         16390, 2,
+		//         16858, 0,
+		// 
+		//         17800, 2, // Frog goes croak
+		//         18213, 0,
+		//         18720, 2,
+		// 
+		//         19896, 1, // And the elephant goes toot
+		//         20364, 0,
+		//         20827, 1,
+		//         21240, 2,
+		//         21733, 1,
+		//         22201, 1,
+		// 
+		//         23406, 0, // Ducks say quack
+		//         23849, 2,
+		// 
+		//         25288, 2, // And fish go blub
+		//         25731, 0,
+		//         // And the seal goes
+		//         28809, 0, // ow, ow, ow
+		//         28809, 2,
+		//         29262, 0,
+		//         29262, 2,
+		//         29740, 0,
+		//         29740, 2,
+		//         // But there's
+		//         30920, 1, // one sound
+		//         31384, 1,
+		//         // That
+		//         32760, 2, // no one knows
+		//         33256, 2,
+		// 
+		//         33753, 0,
+		//         34256, 0,
+		//         34720, 0,
+		//         35200, 0,
+		// 
+		//         35780, 0, // What does the fox say?
+		//         36034, 1,
+		//         36308, 2,
+		//         36502, 1,
+		//         36961, 0,
+		//         36961, 2,
+		// 
+		//         37360, -1,
+		// 
+		//         37465, 1, // Ring-ding-ding-ding-dingeringeding
+		//         37963, 1,
+		//         38431, 1,
+		//         38800, 1,
+		//         39123, 1,
+		// 
+		//         39501, 0, // Gering-ding-ding-ding-dingeringeding
+		//         39834, 0,
+		//         40308, 0,
+		//         40600, 0,
+		//         40950, 0,
+		// 
+		//         41229, 1, // Gering-ding-ding-ding-dingeringeding
+		//         41712, 1,
+		//         42175, 1,
+		//         42520, 1,
+		//         42872, 1,
+		// 
+		//         43459, 0, // What the fox say?
+		//         43800, 2,
+		//         44037, 1,
+		//         44440, 0,
+		//         44440, 2,
+		// 
+		//         44955, 0, // Wa-pa-pa-pa-pa-pa-pow
+		//         45463, 2,
+		//         45926, 0,
+		//         46160, 2,
+		//         46320, 0,
+		// 
+		//         47107, 0, // Wa-pa-pa-pa-pa-pow
+		//         47540, 1,
+		//         47804, 0,
+		//         48018, 1,
+		//         48200, 0,
+		// 
+		//         48735, 0, // Wa-pa-pa-pa-pa-pa-pow
+		//         49203, 2,
+		//         49677, 0,
+		//         49880, 2,
+		//         50040, 0,
+		// 
+		//         50800, 0, // What the fox say?
+		//         51300, 2,
+		//         51524, 1,
+		//         51868, 0,
+		//         51868, 2,
+		// 
+		//         52485, 0, // Hatee-hatee-hatee-ho
+		//         52485, 2,
+		//         52959, 0,
+		//         52959, 2,
+		//         53407, 0,
+		//         53407, 2,
+		//         53815, 1,
+		// 
+		//         54353, 0, // Hatee-hatee-hatee-ho
+		//         54353, 2,
+		//         54821, 0,
+		//         54821, 2,
+		//         55294, 0,
+		//         55294, 2,
+		//         55663, 1,
+		// 
+		//         56240, 0, // Hatee-hatee-hatee-ho
+		//         56240, 2,
+		//         56729, 0,
+		//         56729, 2,
+		//         57172, 0,
+		//         57172, 2,
+		//         57560, 1,
+		// 
+		//         58362, 0, // What the fox say?
+		//         58800, 2,
+		//         59054, 1,
+		//         59520, 0,
+		//         59520, 2,
+		// 
+		//         59936, 0, // Joff-tchoffo-tchoff-tchoffo-tchoffo-tchoff
+		//         60185, 1,
+		//         60439, 0,
+		//         60688, 1,
+		//         60937, 0,
+		//         61058, 1,
+		//         61257, 0,
+		//         61615, 1,
+		// 
+		//         62069, 2, // Joff-tchoffo-tchoff-tchoffo-tchoffo-tchoff
+		//         62328, 1,
+		//         62567, 2,
+		//         62800, 1,
+		//         63025, 2,
+		//         63154, 1,
+		//         //63368, 2,
+		//         63473, 2,
+		// 
+		//         63682, 0, // Joff-tchoff-tchoff-tchoff-tchoffo-tchoffo-tchoff
+		//         63946, 1,
+		//         64170, 0,
+		//         64409, 1,
+		//         64653, 0,
+		//         64852, 1,
+		//         65012, 0,
+		// 
+		//         65350, 1,
+		// 
+		//         65923, 0, // What the fox say?
+		//         66317, 2,
+		//         66531, 1,
+		//         67029, 0,
+		//         67029, 2,
+		// 
+		//         67512, -1,
+		// 
+		//         68416, 1, // Big blue eyes,
+		//         68880, 2,
+		//         69360, 0,
+		// 
+		//         70287, 1, // pointy nose
+		//         70729, 0,
+		//         72217, 2,
+		// 
+		//         72150, 0, // Chasing mice and digging holes
+		//         72649, 1,
+		//         73086, 2,
+		//         73585, 0,
+		//         74046, 2,
+		//         74506, 1,
+		//         74946, 0,
+		// 
+		//         75931, 0, // Tiny paws
+		//         76398, 1,
+		//         76870, 2,
+		// 
+		//         77807, 1, // up the hill
+		//         78277, 1,
+		//         78740, 2,
+		// 
+		//         79819, 0, // Suddenly you're standing still
+		//         80155, 2,
+		//         80345, 0,
+		//         80824, 1,
+		//         81313, 2,
+		//         81782, 0,
+		//         82231, 2,
+		// 
+		//         83109, 1, // Your fur is red,
+		//         83390, 2,
+		//         83639, 0,
+		//         83872, 1,
+		// 
+		//         84919, 1, // so beautiful
+		//         85264, 0,
+		//         85453, 2,
+		//         85746, 1,
+		// 
+		//         87392, 2, // Like an angle in disguise
+		//         87667, 1,
+		//         87904, 0,
+		//         88370, 1,
+		//         89038, 2,
+		//         89257, 1,
+		//         89705, 0,
+		// 
+		//         90459, 2, // But if you meet
+		//         90915, 2,
+		//         91155, 1,
+		//         91375, 0,
+		// 
+		//         92542, 2, // a friendly horse
+		//         92739, 2,
+		//         92956, 1,
+		//         93234, 2,
+		// 
+		//         94866, 0, // Will you communicate by
+		//         95149, 1,
+		//         95337, 0,
+		//         95559, 2,
+		//         96057, 1,
+		//         96320, 0,
+		//         96804, 1,
+		// 
+		//         97496, 0, // Mo-o-o-o-orse?
+		//         97872, 1,
+		//         98219, 0,
+		//         98542, 1,
+		//         98904, 0,
+		// 
+		//         99341, 2, // Mo-o-o-o-orse?
+		//         99724, 1,
+		//         100085, 2,
+		//         100422, 1,
+		//         100764, 2,
+		// 
+		//         101218, 0, // Mo-o-o-o-
+		//         101609, 1,
+		//         101946, 0,
+		//         102288, 1,
+		// 
+		//         102432, 2, // How
+		// 
+		//         102611, 0, // orse? & will
+		// 
+		//         102825, 2, // you speak to that
+		//         103386, 1,
+		//         103803, 1,
+		//         104252, 0,
+		//         104252, 2,
+		// 
+		//         104998, 1, // Ho-o-o-o-orse?
+		//         104998, 2,
+		//         105342, 1,
+		//         105342, 2,
+		//         105696, 1,
+		//         105696, 2,
+		//         106039, 1,
+		//         106039, 2,
+		//         106372, 1,
+		//         106372, 2,
+		// 
+		//         106860, 0, // Ho-o-o-o-orse?
+		//         106860, 1,
+		//         107231, 0,
+		//         107231, 1,
+		//         107564, 0,
+		//         107564, 1,
+		//         107904, 0,
+		//         107904, 1,
+		//         108223, 0,
+		//         108223, 1,
+		// 
+		//         108742, 0, // Ho-o-o-orse?
+		//         108742, 2,
+		//         109096, 0,
+		//         109096, 2,
+		//         109439, 0,
+		//         109439, 2,
+		//         109783, 0,
+		//         109783, 2,
+		//         110116, 0,
+		//         110116, 2,
+		// 
+		//         110719, 0,
+		//         111097, 2,
+		//         111311, 1,
+		//         111514, 0,
+		//         111970, 2,
+		// 
+		//         112438, 0, // [BEAT]
+		//         112960, 0,
+		//         113400, 0,
+		//         113880, 0,
+		// 
+		//         114049, 2, // The
+		//         114320, 2, // sec-
+		//         114320, 0, // [BEAT]
+		//         114760, 2, // -ret
+		//         114760, 0, // [BEAT]
+		//         115200, 2, // of
+		//         115292, 0, // [BEAT]
+		//         115538, 2, // the
+		//         115680, 0, // [BEAT]
+		//         115976, 2, // fox
+		//         116160, 0, // [BEAT]
+		// 
+		//         116640, 0, // [BEAT]
+		//         117080, 0,
+		//         117565, 0,
+		// 
+		//         118081, 2, // Anc-
+		//         118081, 0, // [BEAT]
+		//         118520, 2, // -ient
+		//         118520, 0, // [BEAT]
+		//         118825, 2, // mys-
+		//         119000, 0, // [BEAT]
+		//         119220, 2, // -te-
+		//         119480, 0, // [BEAT]
+		//         119704, 2, // -ry
+		// 
+		//         119920, 0, // [BEAT]
+		//         120440, 0,
+		//         120880, 0,
+		//         121360, 0,
+		// 
+		//         121800, 2, // Some-
+		//         121800, 0, // [BEAT]
+		//         122280, 2, // -where
+		//         122280, 0, // [BEAT]
+		//         122526, 2, // deep
+		//         122760, 0, // [BEAT]
+		//         123003, 2, // in
+		//         123218, 2, // the
+		//         123218, 0, // [BEAT]
+		//         123513, 2, // woods
+		//         123640, 0, // [BEAT]
+		// 
+		//         124160, 0, // [BEAT]
+		//         124640, 0,
+		//         125080, 0,
+		//     }
+		// };
+		Dictionary_2_t449B1F319103FEE906F9A5EDBAE1DD5B6CAC4FB4* L_17 = __this->___levels_4;
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_18 = (Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B*)il2cpp_codegen_object_new(Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B_il2cpp_TypeInfo_var);
+		NullCheck(L_18);
+		Song__ctor_mFA1AADF28CDD2FCB7A854382FA3D8ABA2A03DE26(L_18, NULL);
+		V_0 = L_18;
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_19 = V_0;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_20 = __this->___theFoxClip_9;
+		NullCheck(L_19);
+		L_19->___audioClip_1 = L_20;
+		Il2CppCodeGenWriteBarrier((void**)(&L_19->___audioClip_1), (void*)L_20);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_21 = V_0;
+		NullCheck(L_21);
+		L_21->___timeAtKeyPoint_2 = 0;
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_22 = V_0;
+		NullCheck(L_22);
+		L_22->___songName_3 = _stringLiteralD6E23828A12ED0A089DF02A0FACD96D281A8C488;
+		Il2CppCodeGenWriteBarrier((void**)(&L_22->___songName_3), (void*)_stringLiteralD6E23828A12ED0A089DF02A0FACD96D281A8C488);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_23 = V_0;
+		NullCheck(L_23);
+		L_23->___songArtist_4 = _stringLiteral602F8B164EF342B0C03360E7AC792D298E0EDD65;
+		Il2CppCodeGenWriteBarrier((void**)(&L_23->___songArtist_4), (void*)_stringLiteral602F8B164EF342B0C03360E7AC792D298E0EDD65);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_24 = V_0;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_25 = __this->___theFoxArt_10;
+		NullCheck(L_24);
+		L_24->___albumArt_5 = L_25;
+		Il2CppCodeGenWriteBarrier((void**)(&L_24->___albumArt_5), (void*)L_25);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_26 = V_0;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_27 = __this->___theFoxColour_8;
+		NullCheck(L_26);
+		L_26->___levelColour_6 = L_27;
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_28 = V_0;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_29 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)610));
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_30 = L_29;
+		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_31 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____38B8F4DAEFD758F97C8C9F318826690DE6C2D198C2190D42E34C1053C96E75C8_0_FieldInfo_var) };
+		RuntimeHelpers_InitializeArray_mE10C3436BA703E4D9D41B3F8F365E4C34F9926EF((RuntimeArray*)L_30, L_31, NULL);
+		NullCheck(L_28);
+		L_28->___tileData_0 = L_30;
+		Il2CppCodeGenWriteBarrier((void**)(&L_28->___tileData_0), (void*)L_30);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_32 = V_0;
+		NullCheck(L_17);
+		Dictionary_2_set_Item_m0DEA6F0AD7695947EC0B4935F2BEEDEAEDEC8D1E(L_17, _stringLiteral30A6C72778B1C4CC52499F87E8D7177F9AA8BC14, L_32, Dictionary_2_set_Item_m0DEA6F0AD7695947EC0B4935F2BEEDEAEDEC8D1E_RuntimeMethod_var);
 		// }
 		return;
 	}

@@ -1005,6 +1005,21 @@ struct __StaticArrayInitTypeSizeU3D1520_tA0A792A5583AF061178C24F0A2EF72DC2E68386
 	};
 };
 
+// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=2440
+struct __StaticArrayInitTypeSizeU3D2440_t482527EF1080CF8A16FB1D4EDDDBDF51FBA8D4B0 
+{
+	union
+	{
+		struct
+		{
+			union
+			{
+			};
+		};
+		uint8_t __StaticArrayInitTypeSizeU3D2440_t482527EF1080CF8A16FB1D4EDDDBDF51FBA8D4B0__padding[2440];
+	};
+};
+
 // TMPro.TMP_Text/SpecialCharacter
 struct SpecialCharacter_t6C1DBE8C490706D1620899BAB7F0B8091AD26777 
 {
@@ -1096,8 +1111,10 @@ struct U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49
 
 struct U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA_StaticFields
 {
+	// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=2440 <PrivateImplementationDetails>::38B8F4DAEFD758F97C8C9F318826690DE6C2D198C2190D42E34C1053C96E75C8
+	__StaticArrayInitTypeSizeU3D2440_t482527EF1080CF8A16FB1D4EDDDBDF51FBA8D4B0 ___38B8F4DAEFD758F97C8C9F318826690DE6C2D198C2190D42E34C1053C96E75C8_0;
 	// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=1520 <PrivateImplementationDetails>::45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49
-	__StaticArrayInitTypeSizeU3D1520_tA0A792A5583AF061178C24F0A2EF72DC2E683868 ___45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_0;
+	__StaticArrayInitTypeSizeU3D1520_tA0A792A5583AF061178C24F0A2EF72DC2E683868 ___45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_1;
 };
 
 // UnityEngine.AnimationCurve
@@ -6964,6 +6981,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CWarpTextU3Ed__8_System_Coll
 		return L_0;
 	}
 }
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
