@@ -13,7 +13,11 @@ public class LevelManager : MonoBehaviour
     public GameObject tile;
     public Transform tileParent;
 
-    public SongData songDataScript;
+    private int numOfBeginningTilesHeldDown = 0;
+    public GameObject beginningTilesEmptyObject;
+    public Animation albumArtAnimation;
+
+    //public SongData songDataScript;
     public Score scoreScript;
     public EndScreenProgressBar endScreenProgressBarScript;
 
@@ -25,11 +29,17 @@ public class LevelManager : MonoBehaviour
     public TMPro.TextMeshProUGUI endScreenSongNameText;
     public Image endScreenAlbumArtImage;
     public RawImage endScreenBackground;
-   
+
+    public Image menuBackground;
+    public Image menuAlbumArtOverlay;
+    public Image menuAlbumArt;
+    public TMPro.TextMeshProUGUI menuSongName;
+    public TMPro.TextMeshProUGUI menuArtistName;
+
 
 
     [HideInInspector]
-    public string newLevelName; // the name of the level, this should be set before the StartLevel() function is called
+    public static string newLevelName; // the name of the level, this should be set before the StartLevel() function is called
 
     private Song songData;
     private int[] tileData;
@@ -37,8 +47,8 @@ public class LevelManager : MonoBehaviour
     private int currentTileNum = 0;
     private bool checkForTiles = false;
 
-    public static int speed = 3; // the current speed of the tiles
-    private int beginningSpeed;
+    public static int speed; // the current speed of the tiles
+    private int beginningSpeed = 3;
     public float delayOffset; // in seconds
 
     public float endLevelDelay; // the delay until the end screen elements show, from after the song has ended
@@ -48,6 +58,10 @@ public class LevelManager : MonoBehaviour
     public Sprite[] enslin;
     public Sprite[] tim;
 
+    private Sprite[][] teacherImages; // an array of the above arrays
+
+    private Sprite[] currentTeacherImages; // is identical to one of the above arrays, depending on the level
+
     private void Awake()
     {
         
@@ -56,9 +70,23 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        beginningSpeed = speed;
+        teacherImages = new Sprite[][]
+        {
+            briggs, monk, enslin, tim
+        };
+
+        speed = beginningSpeed;
+        songData = SongData.GetSongData(); // get the timing for the tiles
+        RenderSettings.fogColor = songData.levelColour;
+
+        menuBackground.color = songData.levelColour;
+        menuAlbumArtOverlay.color = songData.levelColour;
+        menuAlbumArt.sprite = songData.albumArt;
+        menuSongName.text = songData.songName;
+        menuArtistName.text = songData.songArtist;
     }
 
+    private bool manualStart = false; // DUBGGING ONLY
     // Update is called once per frame
     void Update()
     {
@@ -67,17 +95,34 @@ public class LevelManager : MonoBehaviour
             CheckTile();
         }
 
+        if (Input.GetKeyDown("s") && !manualStart) // for debugging reasons only
+        {
+            manualStart = true;
+            Invoke(nameof(StartLevel), 0.5f);
+        }
+
         
     }
 
+    public void BeginningTilePressed(bool pressed) // called from the Touch Manager script when a beginning tile has been either pressed or released (boolean)
+    {
+        numOfBeginningTilesHeldDown += pressed ? 1 : -1;
+        if (numOfBeginningTilesHeldDown == 2) // are both beginning tiles being held down?
+        {
+            Invoke(nameof(StartLevel), 0.5f); // using a string literal adds maintainability, hence the use of nameof() 
+        }
+    }
+
+    
+
     public void StartLevel()
     {
-
-        songData = songDataScript.GetTileData(newLevelName); // get the timing for the tiles
-        RenderSettings.fogColor = songData.levelColour;
+        beginningTilesEmptyObject.SetActive(false);
+        albumArtAnimation.Play("Album Art to Black Circle");
 
         tileData = songData.tileData;
         //int firstTileTime = tileData[0];
+        currentTeacherImages = teacherImages[GetTeacherImages(songData.teacher)];
 
         timeAtLevelStart = GetRealTime();// ((8134 / speed) + delayOffset);
 
@@ -85,7 +130,7 @@ public class LevelManager : MonoBehaviour
 
         checkForTiles = true;
 
-        Invoke("PlaySong", GetDelay(true));
+        Invoke(nameof(PlaySong), GetDelay(true));
 
     }
 
@@ -117,11 +162,11 @@ public class LevelManager : MonoBehaviour
         tileObject.GetComponent<TileMove>().myRow = posIndex; // tell the tile which row it's in
 
         int index = speed - beginningSpeed;
-        if (index >= enslin.Length) // we're at the last stage, so make the image random!
+        if (index >= currentTeacherImages.Length) // we're at the last stage, so make the image random!
         {
-            index = UnityEngine.Random.Range(0, enslin.Length);
+            index = UnityEngine.Random.Range(0, currentTeacherImages.Length);
         }
-        tileObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = enslin[index]; // set the image of the tile
+        tileObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = currentTeacherImages[index]; // set the image of the tile
     }
 
     private void CheckTile()
@@ -224,6 +269,25 @@ public class LevelManager : MonoBehaviour
             res = (8134 / speed) + delayOffset;
         }
         return res;
+    }
+
+    public static int GetTeacherImages(string teacherName) // static because the MenuManager also uses this function from another scene
+    {
+        switch (teacherName)
+        {
+            case "Briggs":
+                return 0;
+            case "Monk":
+                return 1;
+            case "Enslin":
+                return 2;
+            case "Tim":
+                return 2;
+            default:
+                Debug.LogWarning("\"" + teacherName + "\" is not a valid teacher name. Defaulting to briggs");
+                return 0;
+             
+        }
     }
 
 

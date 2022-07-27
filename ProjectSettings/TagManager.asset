@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Zone
+  - Tile
+  - Beginning Tile
+  - Menu Manager
   layers:
   - Default
   - TransparentFX
@@ -12,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Main Menu Canvas
   - 
   - 
   - 

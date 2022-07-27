@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SongData : MonoBehaviour
 {
-    private Dictionary<string, Song> levels;
+    public static bool alreadyInstance = false; // don't destroy on load stuff
+
+    public static Dictionary<string, Song> levels;
 
     public Color crushColour;
     public AudioClip crushClip;
@@ -14,12 +16,26 @@ public class SongData : MonoBehaviour
     public AudioClip theFoxClip;
     public Sprite theFoxArt;
 
+
+    private void Awake() // Don't destroy on load stuff
+    {
+        if (alreadyInstance)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            alreadyInstance = true;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         levels = new Dictionary<string, Song>();
 
-        levels["crush"] = new Song
+        levels["Crush"] = new Song
         {
             audioClip = crushClip,
             timeAtKeyPoint = 57554,
@@ -27,6 +43,7 @@ public class SongData : MonoBehaviour
             songArtist = "Tessa Violet",
             albumArt = crushArt,
             levelColour = crushColour,
+            teacher = "Briggs",
             tileData = new int[]
             {
                 2283, 0,
@@ -275,7 +292,7 @@ public class SongData : MonoBehaviour
             },
         };
 
-        levels["the fox"] = new Song
+        levels["The Fox"] = new Song
         {
             audioClip = theFoxClip,
             timeAtKeyPoint = 0,
@@ -283,6 +300,7 @@ public class SongData : MonoBehaviour
             songArtist = "Ylvis",
             albumArt = theFoxArt,
             levelColour = theFoxColour,
+            teacher = "Enslin",
             tileData = new int[]
             {
                 0, 1,
@@ -758,9 +776,18 @@ public class SongData : MonoBehaviour
 }
 
 
-    public Song GetTileData(string songName)
+    public static Song GetSongData()
     {
-        return levels[songName];
+        return levels[LevelManager.newLevelName];
+    }
+    public static List<Song> GetAllSongs() // returns a Song list of every level
+    {
+        List<Song> levelsList = new List<Song>();
+        foreach (KeyValuePair<string, Song> song in levels) // for every level
+        {
+            levelsList.Add(song.Value);
+        }
+        return levelsList;
     }
 }
 
@@ -773,4 +800,5 @@ public class Song
     public string songArtist;
     public Sprite albumArt;
     public Color levelColour;
+    public string teacher;
 }

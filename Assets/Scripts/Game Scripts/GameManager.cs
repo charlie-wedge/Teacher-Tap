@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     public LevelManager levelManager;
+    public SceneLoader sceneLoader;
 
     public GameObject ghostTileReference;
     public GameObject[] rowHighlightsReference;
@@ -14,26 +15,40 @@ public class GameManager : MonoBehaviour
     public static GameObject ghostTile;
     public static GameObject[] rowHighlights;
 
+    public Animation[] levelCompleteExitAnimations;
+    public string[] levelCompleteExitAnimationNames;
+
 
     // Start is called before the first frame update
     void Start()
     {
         ghostTile = ghostTileReference;
-        rowHighlights = rowHighlightsReference;
-
-        levelManager.newLevelName = "the fox";
-        Invoke("StartLevel", 0.1f);
-        
+        rowHighlights = rowHighlightsReference; 
     }
 
-    // Update is called once per frame
-    void Update()
+    private int newBuildIndex;
+    public void PlayAgainButtonPressed()
     {
-        
+        ExitLevelCompleteScreen();
+        newBuildIndex = 1;
+        Invoke(nameof(ChangeScene), 1.1f);
+    }
+    public void ContinueButtonPressed()
+    {
+        ExitLevelCompleteScreen();
+        newBuildIndex = 0;
+        Invoke(nameof(ChangeScene), 1.1f);
+    }
+    private void ChangeScene()
+    {
+        sceneLoader.LoadScene(newBuildIndex);
     }
 
-    private void StartLevel()
+    public void ExitLevelCompleteScreen() // called from both the "Continue" and "Play Again" buttons on the level complete screen
     {
-        levelManager.StartLevel();      
+        for (int i=0; i<levelCompleteExitAnimations.Length; i++) // play all the appropriate animations
+        {
+            levelCompleteExitAnimations[i].Play(levelCompleteExitAnimationNames[i]);
+        }
     }
 }
