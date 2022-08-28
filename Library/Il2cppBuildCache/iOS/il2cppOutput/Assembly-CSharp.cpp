@@ -672,8 +672,9 @@ IL2CPP_EXTERN_C RuntimeClass* WaitForEndOfFrame_tE38D80923E3F8380069B423968C25AB
 IL2CPP_EXTERN_C RuntimeClass* WaitForSecondsU5BU5D_t2A9038ECB6E643745AEF2AD9A4F7FFD3D272186E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WordSelectionEvent_t340E6006406B5E90F7190C56218E8F7E3712945E_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____256C39B49266166EAC64816822C84E53BA031ED6BDA1B431C07DB4D4D0586FD1_0_FieldInfo_var;
-IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_1_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_0_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____768681A3CA708BB81599AB616DB9E4522D3CC022503B62FB089B8ABB4412D911_1_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____C56E980D7164F1D6A79AB017D0A0D96F12B77729E5672A463E88BA837E96B8FC_2_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral000A577FA6F1044FCB37680E918D59D0DA3E7DDA;
 IL2CPP_EXTERN_C String_t* _stringLiteral00B28FF06B788B9B67C6B259800F404F9F3761FD;
 IL2CPP_EXTERN_C String_t* _stringLiteral0133981053AC767ED98F641B459173B5499F4EB0;
@@ -783,11 +784,13 @@ IL2CPP_EXTERN_C String_t* _stringLiteralD329E22C83005F002CE492547F6CC64D58B3EDFE
 IL2CPP_EXTERN_C String_t* _stringLiteralD579F97F4A33C344330AED1285CC5B545618BC19;
 IL2CPP_EXTERN_C String_t* _stringLiteralD6E23828A12ED0A089DF02A0FACD96D281A8C488;
 IL2CPP_EXTERN_C String_t* _stringLiteralD99C319B457682A09D028AF022D0B2EE6B4D48A6;
+IL2CPP_EXTERN_C String_t* _stringLiteralDA37BCCC8E658F42DFAF50216464783C16757204;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralDAF2BD03270A51BF9C135F3694DCAD2D3E66F465;
 IL2CPP_EXTERN_C String_t* _stringLiteralDECFB8F380101725B06EAE2D3F983211A277171C;
 IL2CPP_EXTERN_C String_t* _stringLiteralE06836F534424CF36BF8BF362FDB0B01CFBD91B9;
 IL2CPP_EXTERN_C String_t* _stringLiteralE2138FA8D137D1C6C81747FE1638815DDE9177B0;
+IL2CPP_EXTERN_C String_t* _stringLiteralE2BC3F0C19A7B8C171DFDD394C93E04312796DD1;
 IL2CPP_EXTERN_C String_t* _stringLiteralECFE313B68EFC32016FCE052290F55E45D5B1226;
 IL2CPP_EXTERN_C String_t* _stringLiteralEE3657997C5E6EC82CDE374326A95906F03A3315;
 IL2CPP_EXTERN_C String_t* _stringLiteralEF516EC7240CA160FD729299C926B5EDB246658A;
@@ -4732,6 +4735,12 @@ struct SongData_t4CA18B1FE91BA314FDB31095388B1DCB2E828F46  : public MonoBehaviou
 	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___theFoxClip_10;
 	// UnityEngine.Sprite SongData::theFoxArt
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___theFoxArt_11;
+	// UnityEngine.Color SongData::hungryHippoColour
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___hungryHippoColour_12;
+	// UnityEngine.AudioClip SongData::hungryHippoClip
+	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___hungryHippoClip_13;
+	// UnityEngine.Sprite SongData::hungryHippoArt
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___hungryHippoArt_14;
 };
 
 struct SongData_t4CA18B1FE91BA314FDB31095388B1DCB2E828F46_StaticFields
@@ -10449,19 +10458,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SongData_t4CA18B1FE91BA314FDB31095388B1DCB2E828F46_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____256C39B49266166EAC64816822C84E53BA031ED6BDA1B431C07DB4D4D0586FD1_0_FieldInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_1_FieldInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_0_FieldInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____768681A3CA708BB81599AB616DB9E4522D3CC022503B62FB089B8ABB4412D911_1_FieldInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____C56E980D7164F1D6A79AB017D0A0D96F12B77729E5672A463E88BA837E96B8FC_2_FieldInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1CD08BBB1DBFAFB70A804983C0593EC4B4616C62);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral48C45586CB7A85968D9C460329C6CD184E43E427);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral602F8B164EF342B0C03360E7AC792D298E0EDD65);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBD60A21B4E02BE694C74E7C1478B7831B2940C7E);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD6E23828A12ED0A089DF02A0FACD96D281A8C488);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA37BCCC8E658F42DFAF50216464783C16757204);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE06836F534424CF36BF8BF362FDB0B01CFBD91B9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE2BC3F0C19A7B8C171DFDD394C93E04312796DD1);
 		s_Il2CppMethodInitialized = true;
 	}
 	Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* V_0 = NULL;
 	{
-		// levels = new Dictionary<string, Song>();
+		// levels = new();
 		Dictionary_2_t449B1F319103FEE906F9A5EDBAE1DD5B6CAC4FB4* L_0 = (Dictionary_2_t449B1F319103FEE906F9A5EDBAE1DD5B6CAC4FB4*)il2cpp_codegen_object_new(Dictionary_2_t449B1F319103FEE906F9A5EDBAE1DD5B6CAC4FB4_il2cpp_TypeInfo_var);
 		NullCheck(L_0);
 		Dictionary_2__ctor_m169DE9A6C2527DCEDE72A5F789133C4AE70E29E8(L_0, Dictionary_2__ctor_m169DE9A6C2527DCEDE72A5F789133C4AE70E29E8_RuntimeMethod_var);
@@ -10760,7 +10772,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_13 = V_0;
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_14 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)380));
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_15 = L_14;
-		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_16 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_1_FieldInfo_var) };
+		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_16 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_0_FieldInfo_var) };
 		RuntimeHelpers_InitializeArray_mE10C3436BA703E4D9D41B3F8F365E4C34F9926EF((RuntimeArray*)L_15, L_16, NULL);
 		NullCheck(L_13);
 		L_13->___tileData_0 = L_15;
@@ -10846,7 +10858,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         36961, 0,
 		//         36961, 2,
 		// 
-		//         37360, -1,
+		//         37360, -1, // [STAGE 2]
 		// 
 		//         37465, 1, // Ring-ding-ding-ding-dingeringeding
 		//         37963, 1,
@@ -10857,7 +10869,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         39501, 0, // Gering-ding-ding-ding-dingeringeding
 		//         39834, 0,
 		//         40308, 0,
-		//         40600, 0,
+		//         //40600, 0,
 		//         40950, 0,
 		// 
 		//         41229, 1, // Gering-ding-ding-ding-dingeringeding
@@ -10960,7 +10972,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         67029, 0,
 		//         67029, 2,
 		// 
-		//         67512, -1,
+		//         67512, -1, // [STAGE 3]
 		// 
 		//         68416, 1, // Big blue eyes,
 		//         68880, 2,
@@ -10968,7 +10980,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		// 
 		//         70287, 1, // pointy nose
 		//         70729, 0,
-		//         72217, 2,
+		//         71217, 2,
 		// 
 		//         72150, 0, // Chasing mice and digging holes
 		//         72649, 1,
@@ -11004,7 +11016,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         85453, 2,
 		//         85746, 1,
 		// 
-		//         87392, 2, // Like an angle in disguise
+		//         87392, 2, // Like an angel in disguise
 		//         87667, 1,
 		//         87904, 0,
 		//         88370, 1,
@@ -11017,7 +11029,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         91155, 1,
 		//         91375, 0,
 		// 
-		//         92542, 2, // a friendly horse
+		//         92542, 1, // a friendly horse
 		//         92739, 2,
 		//         92956, 1,
 		//         93234, 2,
@@ -11045,7 +11057,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         101218, 0, // Mo-o-o-o-
 		//         101609, 1,
 		//         101946, 0,
-		//         102288, 1,
+		//         //102288, 1,
 		// 
 		//         102432, 2, // How
 		// 
@@ -11055,7 +11067,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         103386, 1,
 		//         103803, 1,
 		//         104252, 0,
-		//         104252, 2,
+		//         //104252, 2,
 		// 
 		//         104998, 1, // Ho-o-o-o-orse?
 		//         104998, 2,
@@ -11092,8 +11104,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		// 
 		//         110719, 0, // What does the fox say?
 		//         111097, 2,
-		//         111311, 1,
-		//         111514, 0,
+		//         111311, 0,
+		//         111514, 1,
+		//         111970, 0,
 		//         111970, 2,
 		// 
 		//         112438, 0, // [BEAT]
@@ -11104,7 +11117,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         114049, 2, // The
 		//         114320, 2, // sec-
 		//         114320, 0, // [BEAT]
-		//         114760, 2, // -ret
+		//         //114760, 2, // -ret
 		//         114760, 0, // [BEAT]
 		//         115200, 2, // of
 		//         115292, 0, // [BEAT]
@@ -11119,11 +11132,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		// 
 		//         118081, 2, // Anc-
 		//         118081, 0, // [BEAT]
-		//         118520, 2, // -ient
+		//         //118520, 2, // -ient
 		//         118520, 0, // [BEAT]
 		//         118825, 2, // mys-
 		//         119000, 0, // [BEAT]
-		//         119220, 2, // -te-
+		//         //119220, 2, // -te-
 		//         119480, 0, // [BEAT]
 		//         119704, 2, // -ry
 		// 
@@ -11134,12 +11147,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		// 
 		//         121800, 2, // Some-
 		//         121800, 0, // [BEAT]
-		//         122280, 2, // -where
+		//         //122280, 2, // -where
 		//         122280, 0, // [BEAT]
 		//         122526, 2, // deep
 		//         122760, 0, // [BEAT]
 		//         123003, 2, // in
-		//         123218, 2, // the
+		//         //123218, 2, // the
 		//         123218, 0, // [BEAT]
 		//         123513, 2, // woods
 		//         123640, 0, // [BEAT]
@@ -11149,11 +11162,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         125080, 0,
 		// 
 		//         125381, 2, // I
-		//         125583, 2, // know
+		//         //125583, 2, // know
 		//         125583, 0, // [BEAT]
 		//         126000, 2, // you're
 		//         126000, 0, // [BEAT]
-		//         126286, 2, // hi-
+		//         //126286, 2, // hi-
 		//         126440, 0, // [BEAT]
 		//         126740, 2, // -ding
 		// 
@@ -11181,7 +11194,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         133040, 0, // [BEAT]
 		//         133480, 2, // we
 		//         133480, 0, // [BEAT]
-		//         133713, 2, // e-
+		//         //133713, 2, // e-
 		//         134013, 0, // [BEAT]
 		//         134256, 2, // -ver
 		//         134419, 0, // [BEAT]
@@ -11193,14 +11206,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         136344, 0,
 		// 
 		//         136570, 2, // Will
-		//         136809, 2, // always
+		//         //136809, 2, // always
 		//         136809, 0, // [BEAT]
 		//         137302, 2, // be
 		//         137302, 0, // [BEAT]
-		//         137482, 2, // a
+		//         //137482, 2, // a
 		//         137697, 2, // mys-
 		//         137697, 0, // [BEAT]
-		//         138009, 2, // -te-
+		//         //138009, 2, // -te-
 		//         138200, 0, // [BEAT]
 		//         138478, 2, // -ry?
 		//         138574, 0, // [BEAT]
@@ -11216,9 +11229,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         141511, 0, // [BEAT]
 		//         141759, 2, // you
 		//         141920, 0, // [BEAT]
-		//         142197, 2, // say?
+		//         //142197, 2, // say?
 		// 
-		//         142437, -1,
+		//         142437, -1, // [STAGE 4]
 		// 
 		//         142437, 0, // [BEAT]
 		//         142437, 2,
@@ -11245,6 +11258,89 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		//         147480, 0,
 		//         147480, 2,
 		// 
+		//         148079, 0, // You're my guardian angel
+		//         148520, 2,
+		//         148790, 0,
+		//         149262, 2,
+		//         149717, 0,
+		//         150176, 2,
+		// 
+		//         //150420, 0, // [BEAT]
+		//         //150420, 2,
+		//         150899, 0,
+		//         150899, 2,
+		//         151352, 0,
+		//         151352, 2,
+		// 
+		//         151828, 2, // Hiding in the woods
+		//         152263, 0,
+		//         152538, 2,
+		//         152986, 0,
+		//         153428, 1,
+		// 
+		//         154177, 0, // [BEAT]
+		//         154177, 2,
+		//         154627, 0,
+		//         154627, 2,
+		//         155109, 0,
+		//         155109, 2,
+		// 
+		//         155560, 1, // What is your sound?
+		//         156288, 1,
+		//         156753, 1,
+		//         //157209, 0,
+		//         157209, 2,
+		// 
+		//         158004, 1, // Wa-wa-way-do
+		//         158604, 2,
+		//         158852, 0,
+		//         159133, 1,
+		// 
+		//         159798, 1, // Wub-wid-big-dum-way-do
+		//         160268, 0,
+		//         160509, 2,
+		//         160717, 1,
+		//         161095, 0,
+		//         161095, 2,
+		// 
+		//         161710, 1, // Wa-wa-way-do
+		//         162346, 2,
+		//         162594, 0,
+		//         162918, 1,
+		// 
+		//         163052, 0, // Will we ever know?
+		//         163520, 1,
+		//         163920, 0,
+		//         164242, 2,
+		//         164747, 0,
+		// 
+		//         165416, 0, // Bay-budabud-dum-dam
+		//         165808, 1,
+		//         166012, 1,
+		//         166259, 2,
+		//         166579, 0,
+		// 
+		//         166805, 0, // I want to
+		//         167557, 1,
+		//         168011, 2,
+		//         168474, 1, // (know)
+		// 
+		//         168685, 0, // I want to
+		//         169435, 1,
+		//         169920, 2,
+		//         170352, 1, // (know)
+		// 
+		//         170558, 2, // I want to know
+		//         171355, 1,
+		//         171801, 0,
+		//         172463, 1,
+		// 
+		//         172818, 0, // Abay-ba-da bum-bum bay-dum
+		//         173267, 1,
+		//         173556, 1,
+		//         173864, 0,
+		//         174216, 0,
+		//         174216, 2,
 		//     }
 		// };
 		Dictionary_2_t449B1F319103FEE906F9A5EDBAE1DD5B6CAC4FB4* L_18 = ((SongData_t4CA18B1FE91BA314FDB31095388B1DCB2E828F46_StaticFields*)il2cpp_codegen_static_fields_for(SongData_t4CA18B1FE91BA314FDB31095388B1DCB2E828F46_il2cpp_TypeInfo_var))->___levels_5;
@@ -11282,9 +11378,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		L_29->___teacher_7 = _stringLiteral1CD08BBB1DBFAFB70A804983C0593EC4B4616C62;
 		Il2CppCodeGenWriteBarrier((void**)(&L_29->___teacher_7), (void*)_stringLiteral1CD08BBB1DBFAFB70A804983C0593EC4B4616C62);
 		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_30 = V_0;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_31 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)782));
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_31 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)888));
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_32 = L_31;
-		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_33 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____256C39B49266166EAC64816822C84E53BA031ED6BDA1B431C07DB4D4D0586FD1_0_FieldInfo_var) };
+		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_33 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____C56E980D7164F1D6A79AB017D0A0D96F12B77729E5672A463E88BA837E96B8FC_2_FieldInfo_var) };
 		RuntimeHelpers_InitializeArray_mE10C3436BA703E4D9D41B3F8F365E4C34F9926EF((RuntimeArray*)L_32, L_33, NULL);
 		NullCheck(L_30);
 		L_30->___tileData_0 = L_32;
@@ -11292,6 +11388,368 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SongData_Start_m2F3DB7ED54C8270EACF3D08E
 		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_34 = V_0;
 		NullCheck(L_18);
 		Dictionary_2_set_Item_m0DEA6F0AD7695947EC0B4935F2BEEDEAEDEC8D1E(L_18, _stringLiteralD6E23828A12ED0A089DF02A0FACD96D281A8C488, L_34, Dictionary_2_set_Item_m0DEA6F0AD7695947EC0B4935F2BEEDEAEDEC8D1E_RuntimeMethod_var);
+		// levels["Hungry Hippo"] = new Song
+		// {
+		//     audioClip = hungryHippoClip,
+		//     timeAtKeyPoint = 0,
+		//     songName = "Hungry Hippo",
+		//     songArtist = "Parry Gripp",
+		//     albumArt = hungryHippoArt,
+		//     levelColour = hungryHippoColour,
+		//     teacher = "Briggs",
+		//     tileData = new int[]
+		//     {
+		//         324, 0, // Hungry hippo, hungry, hungry hippo
+		//         756, 2,
+		//         1298, 0,
+		//         1850, 1,
+		//         2196, 2,
+		// 
+		//         3344, 0, // Hungry hippo, hungry, hungry hippo
+		//         3757, 2,
+		//         4324, 0,
+		//         4835, 1,
+		//         5262, 2,
+		// 
+		//         6377, 0, // Hungry hippo, hungry, hungry hippo
+		//         6791, 2,
+		//         7336, 0,
+		//         7916, 1,
+		//         8296, 2,
+		// 
+		//         9378, 0, // Hungry hippo, hungry, hungry hippo
+		//         9804, 2,
+		//         10376, 0,
+		//         10900, 1,
+		//         11307, 2,
+		// 
+		//         12054, 0, // H-U-N-G-R-Y,
+		//         12277, 1,
+		//         12444, 2,
+		//         12741, 0,
+		//         13010, 1,
+		//         13163, 2,
+		// 
+		//         13750, 0, // bring me a pizza pie
+		//         14114, 2,
+		//         14339, 1,
+		//         14691, 0,
+		// 
+		//         15090, 2, // H-I-P-P-O,
+		//         15225, 1,
+		//         15461, 0,
+		//         16017, 1,
+		//         16230, 2,
+		// 
+		//         16601, 2, // peanut butter high-ho
+		//         16981, 0,
+		//         17323, 1,
+		//         17700, 1,
+		// 
+		//         18100, 1, // Peanut butter high-ho
+		//         18502, 1,
+		//         18841, 0,
+		//         19182, 2,
+		// 
+		//         19615, 1, // Peanut butter high-ho
+		//         19973, 1,
+		//         20293, 2,
+		//         20712, 0,
+		// 
+		//         21152, 1, // P-p-p-p-p-p-p-p-
+		//         21510, 2,
+		//         21898, 1,
+		//         22280, 2,
+		// 
+		//         22646, 1, // peanut butter high-ho
+		//         23011, 1,
+		//         23345, 0,
+		//         23713, 0,
+		//         23713, 2,
+		// 
+		//         24091, -1, // [STAGE 2]
+		// 
+		//         24514, 2, // Hungry hippo, hungry, hungry hippo
+		//         24875, 0,
+		//         25447, 2,
+		//         26023, 2,
+		//         26358, 0,
+		//         26795, 1, // (High-ho!)
+		//         27111, 1,
+		// 
+		//         27521, 2, // Hungry hippo, hungry, hungry hippo
+		//         27871, 0,
+		//         28402, 2,
+		//         29004, 2,
+		//         29414, 0,
+		//         29794, 1,
+		//         30159, 1, // (High-ho!)
+		// 
+		//         30491, 2, // Hungry hippo, hungry, hungry, hippo
+		//         30912, 0,
+		//         31514, 2,
+		//         32068, 2,
+		//         32388, 0,
+		//         32775, 1, // (High-ho!)
+		//         33152, 1,
+		// 
+		//         33573, 0, // Hungry hippo, hungry, hungry hippo
+		//         33912, 2,
+		//         34480, 0,
+		//         35049, 0,
+		//         35436, 2,
+		// 
+		//         36229, 0,
+		//         36778, 2,
+		//         37544, 0,
+		//         37909, 2,
+		//         38292, 0,
+		//         38468, 2,
+		//         38859, 1,
+		// 
+		//         39243, 2,
+		//         39808, 0,
+		//         40539, 2,
+		//         40931, 0,
+		//         41287, 2,
+		//         41479, 0,
+		//         41876, 1,
+		// 
+		//         // High-ho!
+		// 
+		//         42216, 0,
+		//         42825, 2,
+		//         43547, 0,
+		//         43948, 2,
+		//         44296, 0,
+		//         44505, 2,
+		//         44861, 1,
+		// 
+		//         // High-ho!
+		// 
+		//         45244, 2,
+		//         45845, 0,
+		//         46028, 2,
+		// 
+		//         46404, -1, // [STAGE 3]
+		// 
+		//         46760, 1, // Peanut butter high-ho
+		//         47152, 1,
+		//         47505, 0,
+		//         47865, 2,
+		// 
+		//         // (High-ho)
+		// 
+		//         49786, 1, // Peanut butter-high
+		//         50165, 1,
+		//         50480, 0,
+		// 
+		//         50897, 1, // Peanut butter-high
+		//         51296, 1,
+		//         51668, 2,
+		// 
+		//         52048, 1, // Peanut butter
+		//         52440, 1,
+		// 
+		//         52806, 1, // Peanut butter-high
+		//         53204, 1,
+		//         53532, 0,
+		// 
+		//         53943, 1, // Peanut butter-high
+		//         54322, 1,
+		//         54680, 2,
+		// 
+		//         55061, 1, // Peanut butter
+		//         55440, 1,
+		// 
+		//         55858, 1, // Peanut butter-high
+		//         56211, 1,
+		//         56519, 0,
+		// 
+		//         56943, 1, // Peanut butter-high
+		//         57320, 1,
+		//         57657, 2,
+		// 
+		//         58074, 1, // Peanut butter
+		//         58472, 1,
+		// 
+		//         58897, 2, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+		//         59265, 0,
+		//         59629, 2,
+		//         59986, 0,
+		//         60365, 2,
+		//         60743, 0,
+		//         61116, 2,
+		//         61501, 0,
+		// 
+		//         61876, 1, // Peanut butter-high
+		//         62248, 1,
+		//         62594, 0,
+		// 
+		//         63003, 1, // Peanut butter-high
+		//         63375, 1,
+		//         63703, 2,
+		// 
+		//         64124, 1, // Peanut butter
+		//         64502, 1,
+		// 
+		//         64817, -1, // [STAGE 4]
+		// 
+		//         64910, 2, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+		//         65093, 1,
+		//         65297, 2,
+		//         65485, 1,
+		//         65667, 2,
+		//         65854, 1,
+		//         66043, 2,
+		//         66241, 1,
+		//         66422, 2,
+		//         66619, 1,
+		//         66800, 2,
+		//         66994, 1,
+		//         67174, 2,
+		//         67357, 1,
+		//         67553, 2,
+		//         67737, 1,
+		// 
+		//         67931, 0, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+		//         68112, 1,
+		//         68307, 0,
+		//         68495, 1,
+		//         68684, 0,
+		//         68874, 1,
+		//         69063, 0,
+		//         69260, 1,
+		//         69438, 0,
+		//         69629, 1,
+		//         69817, 0,
+		//         70018, 1,
+		//         70194, 0,
+		//         70375, 1,
+		//         70576, 0,
+		//         70755, 1,
+		// 
+		//         70965, 2, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+		//         71140, 1,
+		//         71332, 2,
+		//         71515, 1,
+		//         71710, 2,
+		//         71894, 1,
+		//         72096, 2,
+		//         72270, 1,
+		//         72456, 2,
+		//         72626, 1,
+		//         72843, 2,
+		//         73030, 1,
+		//         73213, 2,
+		//         73400, 1,
+		//         73601, 2,
+		//         73783, 1,
+		// 
+		//         73977, 0, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+		//         74160, 1,
+		//         74342, 0,
+		//         74527, 1,
+		//         74726, 0,
+		//         74912, 1,
+		//         75108, 0,
+		//         75282, 1,
+		//         75478, 0,
+		//         75661, 1,
+		//         75861, 0,
+		//         76045, 1,
+		//         76228, 0,
+		//         76428, 1,
+		//         76616, 0,
+		//         76805, 1,
+		// 
+		//         76994, 2, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+		//         77172, 1,
+		//         77364, 2,
+		//         77551, 1,
+		//         77744, 2,
+		//         77930, 1,
+		//         78130, 2,
+		//         78314, 1,
+		//         78493, 2,
+		//         78686, 1,
+		//         78870, 2,
+		//         79071, 1,
+		//         79268, 2,
+		//         79446, 1,
+		//         79641, 2,
+		//         79829, 1,
+		// 
+		//         80009, 0, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+		//         80194, 1,
+		//         80382, 0,
+		//         80576, 1,
+		//         80763, 0,
+		//         80947, 1,
+		//         81137, 0,
+		//         81336, 1,
+		//         81515, 0,
+		//         81705, 1,
+		//         81882, 0,
+		//         82094, 1,
+		//         82268, 0,
+		//         82459, 1,
+		//         82660, 0,
+		//         82840, 1,
+		// 
+		//         83767, 1, // Peanut butter high-ho
+		//         84109, 1,
+		//         84456, 0,
+		//         84842, 2,
+		// 
+		//         // god save me from that heck
+		//     }
+		// };
+		Dictionary_2_t449B1F319103FEE906F9A5EDBAE1DD5B6CAC4FB4* L_35 = ((SongData_t4CA18B1FE91BA314FDB31095388B1DCB2E828F46_StaticFields*)il2cpp_codegen_static_fields_for(SongData_t4CA18B1FE91BA314FDB31095388B1DCB2E828F46_il2cpp_TypeInfo_var))->___levels_5;
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_36 = (Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B*)il2cpp_codegen_object_new(Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B_il2cpp_TypeInfo_var);
+		NullCheck(L_36);
+		Song__ctor_mFA1AADF28CDD2FCB7A854382FA3D8ABA2A03DE26(L_36, NULL);
+		V_0 = L_36;
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_37 = V_0;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_38 = __this->___hungryHippoClip_13;
+		NullCheck(L_37);
+		L_37->___audioClip_1 = L_38;
+		Il2CppCodeGenWriteBarrier((void**)(&L_37->___audioClip_1), (void*)L_38);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_39 = V_0;
+		NullCheck(L_39);
+		L_39->___timeAtKeyPoint_2 = 0;
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_40 = V_0;
+		NullCheck(L_40);
+		L_40->___songName_3 = _stringLiteralE2BC3F0C19A7B8C171DFDD394C93E04312796DD1;
+		Il2CppCodeGenWriteBarrier((void**)(&L_40->___songName_3), (void*)_stringLiteralE2BC3F0C19A7B8C171DFDD394C93E04312796DD1);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_41 = V_0;
+		NullCheck(L_41);
+		L_41->___songArtist_4 = _stringLiteralDA37BCCC8E658F42DFAF50216464783C16757204;
+		Il2CppCodeGenWriteBarrier((void**)(&L_41->___songArtist_4), (void*)_stringLiteralDA37BCCC8E658F42DFAF50216464783C16757204);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_42 = V_0;
+		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_43 = __this->___hungryHippoArt_14;
+		NullCheck(L_42);
+		L_42->___albumArt_5 = L_43;
+		Il2CppCodeGenWriteBarrier((void**)(&L_42->___albumArt_5), (void*)L_43);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_44 = V_0;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_45 = __this->___hungryHippoColour_12;
+		NullCheck(L_44);
+		L_44->___levelColour_6 = L_45;
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_46 = V_0;
+		NullCheck(L_46);
+		L_46->___teacher_7 = _stringLiteralE06836F534424CF36BF8BF362FDB0B01CFBD91B9;
+		Il2CppCodeGenWriteBarrier((void**)(&L_46->___teacher_7), (void*)_stringLiteralE06836F534424CF36BF8BF362FDB0B01CFBD91B9);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_47 = V_0;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_48 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)506));
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_49 = L_48;
+		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_50 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____768681A3CA708BB81599AB616DB9E4522D3CC022503B62FB089B8ABB4412D911_1_FieldInfo_var) };
+		RuntimeHelpers_InitializeArray_mE10C3436BA703E4D9D41B3F8F365E4C34F9926EF((RuntimeArray*)L_49, L_50, NULL);
+		NullCheck(L_47);
+		L_47->___tileData_0 = L_49;
+		Il2CppCodeGenWriteBarrier((void**)(&L_47->___tileData_0), (void*)L_49);
+		Song_tAC9D016C00F8C3A760B62E7ADE3836581189230B* L_51 = V_0;
+		NullCheck(L_35);
+		Dictionary_2_set_Item_m0DEA6F0AD7695947EC0B4935F2BEEDEAEDEC8D1E(L_35, _stringLiteralE2BC3F0C19A7B8C171DFDD394C93E04312796DD1, L_51, Dictionary_2_set_Item_m0DEA6F0AD7695947EC0B4935F2BEEDEAEDEC8D1E_RuntimeMethod_var);
 		// }
 		return;
 	}
@@ -11340,7 +11798,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tB4B06D835F9D713B04FB66252E0EBC7BE32F1
 	KeyValuePair_2_tD29C76D4C1D2DFA333F6780BBCBA6970CF59AF06 V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	{
-		// List<Song> levelsList = new List<Song>();
+		// List<Song> levelsList = new();
 		List_1_tB4B06D835F9D713B04FB66252E0EBC7BE32F1570* L_0 = (List_1_tB4B06D835F9D713B04FB66252E0EBC7BE32F1570*)il2cpp_codegen_object_new(List_1_tB4B06D835F9D713B04FB66252E0EBC7BE32F1570_il2cpp_TypeInfo_var);
 		NullCheck(L_0);
 		List_1__ctor_m3E46144D23C0B89F5322710689FBDD90DB294453(L_0, List_1__ctor_m3E46144D23C0B89F5322710689FBDD90DB294453_RuntimeMethod_var);

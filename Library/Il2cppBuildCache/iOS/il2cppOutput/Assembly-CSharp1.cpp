@@ -1337,8 +1337,8 @@ struct __StaticArrayInitTypeSizeU3D1520_tA0A792A5583AF061178C24F0A2EF72DC2E68386
 	};
 };
 
-// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=3128
-struct __StaticArrayInitTypeSizeU3D3128_tF8539CC1210167D0460BBF5FEC2C1C48E6904C44 
+// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=2024
+struct __StaticArrayInitTypeSizeU3D2024_tED08D739974F4ADEBCB14B589401600D000AB709 
 {
 	union
 	{
@@ -1348,7 +1348,22 @@ struct __StaticArrayInitTypeSizeU3D3128_tF8539CC1210167D0460BBF5FEC2C1C48E6904C4
 			{
 			};
 		};
-		uint8_t __StaticArrayInitTypeSizeU3D3128_tF8539CC1210167D0460BBF5FEC2C1C48E6904C44__padding[3128];
+		uint8_t __StaticArrayInitTypeSizeU3D2024_tED08D739974F4ADEBCB14B589401600D000AB709__padding[2024];
+	};
+};
+
+// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=3552
+struct __StaticArrayInitTypeSizeU3D3552_tDB42FB6FFD17AF863AD016571598156825E37B68 
+{
+	union
+	{
+		struct
+		{
+			union
+			{
+			};
+		};
+		uint8_t __StaticArrayInitTypeSizeU3D3552_tDB42FB6FFD17AF863AD016571598156825E37B68__padding[3552];
 	};
 };
 
@@ -1454,10 +1469,12 @@ struct U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49
 
 struct U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA_StaticFields
 {
-	// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=3128 <PrivateImplementationDetails>::256C39B49266166EAC64816822C84E53BA031ED6BDA1B431C07DB4D4D0586FD1
-	__StaticArrayInitTypeSizeU3D3128_tF8539CC1210167D0460BBF5FEC2C1C48E6904C44 ___256C39B49266166EAC64816822C84E53BA031ED6BDA1B431C07DB4D4D0586FD1_0;
 	// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=1520 <PrivateImplementationDetails>::45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49
-	__StaticArrayInitTypeSizeU3D1520_tA0A792A5583AF061178C24F0A2EF72DC2E683868 ___45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_1;
+	__StaticArrayInitTypeSizeU3D1520_tA0A792A5583AF061178C24F0A2EF72DC2E683868 ___45561DD7BB5DCA5D050F1B619C28CEA373B2E02215AD355680DF1868D988EA49_0;
+	// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=2024 <PrivateImplementationDetails>::768681A3CA708BB81599AB616DB9E4522D3CC022503B62FB089B8ABB4412D911
+	__StaticArrayInitTypeSizeU3D2024_tED08D739974F4ADEBCB14B589401600D000AB709 ___768681A3CA708BB81599AB616DB9E4522D3CC022503B62FB089B8ABB4412D911_1;
+	// <PrivateImplementationDetails>/__StaticArrayInitTypeSize=3552 <PrivateImplementationDetails>::C56E980D7164F1D6A79AB017D0A0D96F12B77729E5672A463E88BA837E96B8FC
+	__StaticArrayInitTypeSizeU3D3552_tDB42FB6FFD17AF863AD016571598156825E37B68 ___C56E980D7164F1D6A79AB017D0A0D96F12B77729E5672A463E88BA837E96B8FC_2;
 };
 
 // UnityEngine.AnimationCurve
@@ -9274,6 +9291,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CWarpTextU3Ed__8_System_Coll
 		return L_0;
 	}
 }
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

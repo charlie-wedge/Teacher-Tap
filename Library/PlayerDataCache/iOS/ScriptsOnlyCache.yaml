@@ -1111,7 +1111,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: c4d51dcbd07a845929479a021e980350
+      Hash: a92fc977d2f6e755e102581e34bab722
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SongData
@@ -1509,4 +1509,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
   - Assets/Scenes/GameScene.unity
-  playerPath: /Users/charliewedge/Documents/Unity/Teacher-Tap/Builds/Build 7
+  playerPath: /Users/charliewedge/Documents/Unity/Teacher-Tap/Builds/Build 8

@@ -1102,6 +1102,9 @@ MonoBehaviour:
   theFoxColour: {r: 0.67058825, g: 0.2901961, b: 0.02745098, a: 1}
   theFoxClip: {fileID: 8300000, guid: 3b82462a30a60490ab21958bc6faa7db, type: 3}
   theFoxArt: {fileID: 21300000, guid: a4373c2462f2b41689042422d69646dd, type: 3}
+  hungryHippoColour: {r: 0, g: 0.6226415, b: 0.34845075, a: 1}
+  hungryHippoClip: {fileID: 8300000, guid: 571f6b46e041c4908b34a0f647dfc9d5, type: 3}
+  hungryHippoArt: {fileID: 21300000, guid: ed75553162f4b4602ab5557a32dbd417, type: 3}
 --- !u!4 &386348895
 Transform:
   m_ObjectHideFlags: 0

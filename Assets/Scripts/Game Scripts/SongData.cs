@@ -16,6 +16,10 @@ public class SongData : MonoBehaviour
     public AudioClip theFoxClip;
     public Sprite theFoxArt;
 
+    public Color hungryHippoColour;
+    public AudioClip hungryHippoClip;
+    public Sprite hungryHippoArt;
+
 
     private void Awake() // Don't destroy on load stuff
     {
@@ -33,7 +37,7 @@ public class SongData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levels = new Dictionary<string, Song>();
+        levels = new();
 
         levels["Crush"] = new Song
         {
@@ -370,7 +374,7 @@ public class SongData : MonoBehaviour
                 36961, 0,
                 36961, 2,
 
-                37360, -1,
+                37360, -1, // [STAGE 2]
 
                 37465, 1, // Ring-ding-ding-ding-dingeringeding
                 37963, 1,
@@ -381,7 +385,7 @@ public class SongData : MonoBehaviour
                 39501, 0, // Gering-ding-ding-ding-dingeringeding
                 39834, 0,
                 40308, 0,
-                40600, 0,
+                //40600, 0,
                 40950, 0,
 
                 41229, 1, // Gering-ding-ding-ding-dingeringeding
@@ -484,7 +488,7 @@ public class SongData : MonoBehaviour
                 67029, 0,
                 67029, 2,
 
-                67512, -1,
+                67512, -1, // [STAGE 3]
 
                 68416, 1, // Big blue eyes,
                 68880, 2,
@@ -492,7 +496,7 @@ public class SongData : MonoBehaviour
 
                 70287, 1, // pointy nose
                 70729, 0,
-                72217, 2,
+                71217, 2,
 
                 72150, 0, // Chasing mice and digging holes
                 72649, 1,
@@ -528,7 +532,7 @@ public class SongData : MonoBehaviour
                 85453, 2,
                 85746, 1,
 
-                87392, 2, // Like an angle in disguise
+                87392, 2, // Like an angel in disguise
                 87667, 1,
                 87904, 0,
                 88370, 1,
@@ -541,7 +545,7 @@ public class SongData : MonoBehaviour
                 91155, 1,
                 91375, 0,
 
-                92542, 2, // a friendly horse
+                92542, 1, // a friendly horse
                 92739, 2,
                 92956, 1,
                 93234, 2,
@@ -569,7 +573,7 @@ public class SongData : MonoBehaviour
                 101218, 0, // Mo-o-o-o-
                 101609, 1,
                 101946, 0,
-                102288, 1,
+                //102288, 1,
 
                 102432, 2, // How
 
@@ -579,7 +583,7 @@ public class SongData : MonoBehaviour
                 103386, 1,
                 103803, 1,
                 104252, 0,
-                104252, 2,
+                //104252, 2,
 
                 104998, 1, // Ho-o-o-o-orse?
                 104998, 2,
@@ -616,8 +620,9 @@ public class SongData : MonoBehaviour
 
                 110719, 0, // What does the fox say?
                 111097, 2,
-                111311, 1,
-                111514, 0,
+                111311, 0,
+                111514, 1,
+                111970, 0,
                 111970, 2,
 
                 112438, 0, // [BEAT]
@@ -628,7 +633,7 @@ public class SongData : MonoBehaviour
                 114049, 2, // The
                 114320, 2, // sec-
                 114320, 0, // [BEAT]
-                114760, 2, // -ret
+                //114760, 2, // -ret
                 114760, 0, // [BEAT]
                 115200, 2, // of
                 115292, 0, // [BEAT]
@@ -643,11 +648,11 @@ public class SongData : MonoBehaviour
 
                 118081, 2, // Anc-
                 118081, 0, // [BEAT]
-                118520, 2, // -ient
+                //118520, 2, // -ient
                 118520, 0, // [BEAT]
                 118825, 2, // mys-
                 119000, 0, // [BEAT]
-                119220, 2, // -te-
+                //119220, 2, // -te-
                 119480, 0, // [BEAT]
                 119704, 2, // -ry
 
@@ -658,12 +663,12 @@ public class SongData : MonoBehaviour
 
                 121800, 2, // Some-
                 121800, 0, // [BEAT]
-                122280, 2, // -where
+                //122280, 2, // -where
                 122280, 0, // [BEAT]
                 122526, 2, // deep
                 122760, 0, // [BEAT]
                 123003, 2, // in
-                123218, 2, // the
+                //123218, 2, // the
                 123218, 0, // [BEAT]
                 123513, 2, // woods
                 123640, 0, // [BEAT]
@@ -673,11 +678,11 @@ public class SongData : MonoBehaviour
                 125080, 0,
 
                 125381, 2, // I
-                125583, 2, // know
+                //125583, 2, // know
                 125583, 0, // [BEAT]
                 126000, 2, // you're
                 126000, 0, // [BEAT]
-                126286, 2, // hi-
+                //126286, 2, // hi-
                 126440, 0, // [BEAT]
                 126740, 2, // -ding
 
@@ -705,7 +710,7 @@ public class SongData : MonoBehaviour
                 133040, 0, // [BEAT]
                 133480, 2, // we
                 133480, 0, // [BEAT]
-                133713, 2, // e-
+                //133713, 2, // e-
                 134013, 0, // [BEAT]
                 134256, 2, // -ver
                 134419, 0, // [BEAT]
@@ -717,14 +722,14 @@ public class SongData : MonoBehaviour
                 136344, 0,
 
                 136570, 2, // Will
-                136809, 2, // always
+                //136809, 2, // always
                 136809, 0, // [BEAT]
                 137302, 2, // be
                 137302, 0, // [BEAT]
-                137482, 2, // a
+                //137482, 2, // a
                 137697, 2, // mys-
                 137697, 0, // [BEAT]
-                138009, 2, // -te-
+                //138009, 2, // -te-
                 138200, 0, // [BEAT]
                 138478, 2, // -ry?
                 138574, 0, // [BEAT]
@@ -740,9 +745,9 @@ public class SongData : MonoBehaviour
                 141511, 0, // [BEAT]
                 141759, 2, // you
                 141920, 0, // [BEAT]
-                142197, 2, // say?
+                //142197, 2, // say?
 
-                142437, -1,
+                142437, -1, // [STAGE 4]
 
                 142437, 0, // [BEAT]
                 142437, 2,
@@ -769,8 +774,410 @@ public class SongData : MonoBehaviour
                 147480, 0,
                 147480, 2,
 
+                148079, 0, // You're my guardian angel
+                148520, 2,
+                148790, 0,
+                149262, 2,
+                149717, 0,
+                150176, 2,
+
+                //150420, 0, // [BEAT]
+                //150420, 2,
+                150899, 0,
+                150899, 2,
+                151352, 0,
+                151352, 2,
+
+                151828, 2, // Hiding in the woods
+                152263, 0,
+                152538, 2,
+                152986, 0,
+                153428, 1,
+
+                154177, 0, // [BEAT]
+                154177, 2,
+                154627, 0,
+                154627, 2,
+                155109, 0,
+                155109, 2,
+
+                155560, 1, // What is your sound?
+                156288, 1,
+                156753, 1,
+                //157209, 0,
+                157209, 2,
+
+                158004, 1, // Wa-wa-way-do
+                158604, 2,
+                158852, 0,
+                159133, 1,
+
+                159798, 1, // Wub-wid-big-dum-way-do
+                160268, 0,
+                160509, 2,
+                160717, 1,
+                161095, 0,
+                161095, 2,
+
+                161710, 1, // Wa-wa-way-do
+                162346, 2,
+                162594, 0,
+                162918, 1,
+
+                163052, 0, // Will we ever know?
+                163520, 1,
+                163920, 0,
+                164242, 2,
+                164747, 0,
+
+                165416, 0, // Bay-budabud-dum-dam
+                165808, 1,
+                166012, 1,
+                166259, 2,
+                166579, 0,
+
+                166805, 0, // I want to
+                167557, 1,
+                168011, 2,
+                168474, 1, // (know)
+
+                168685, 0, // I want to
+                169435, 1,
+                169920, 2,
+                170352, 1, // (know)
+
+                170558, 2, // I want to know
+                171355, 1,
+                171801, 0,
+                172463, 1,
+
+                172818, 0, // Abay-ba-da bum-bum bay-dum
+                173267, 1,
+                173556, 1,
+                173864, 0,
+                174216, 0,
+                174216, 2,
             }
         };
+
+        levels["Hungry Hippo"] = new Song
+        {
+            audioClip = hungryHippoClip,
+            timeAtKeyPoint = 0,
+            songName = "Hungry Hippo",
+            songArtist = "Parry Gripp",
+            albumArt = hungryHippoArt,
+            levelColour = hungryHippoColour,
+            teacher = "Briggs",
+            tileData = new int[]
+            {
+                324, 0, // Hungry hippo, hungry, hungry hippo
+                756, 2,
+                1298, 0,
+                1850, 1,
+                2196, 2,
+
+                3344, 0, // Hungry hippo, hungry, hungry hippo
+                3757, 2,
+                4324, 0,
+                4835, 1,
+                5262, 2,
+
+                6377, 0, // Hungry hippo, hungry, hungry hippo
+                6791, 2,
+                7336, 0,
+                7916, 1,
+                8296, 2,
+
+                9378, 0, // Hungry hippo, hungry, hungry hippo
+                9804, 2,
+                10376, 0,
+                10900, 1,
+                11307, 2,
+
+                12054, 0, // H-U-N-G-R-Y,
+                12277, 1,
+                12444, 2,
+                12741, 0,
+                13010, 1,
+                13163, 2,
+
+                13750, 0, // bring me a pizza pie
+                14114, 2,
+                14339, 1,
+                14691, 0,
+
+                15090, 2, // H-I-P-P-O,
+                15225, 1,
+                15461, 0,
+                16017, 1,
+                16230, 2,
+
+                16601, 2, // peanut butter high-ho
+                16981, 0,
+                17323, 1,
+                17700, 1,
+
+                18100, 1, // Peanut butter high-ho
+                18502, 1,
+                18841, 0,
+                19182, 2,
+
+                19615, 1, // Peanut butter high-ho
+                19973, 1,
+                20293, 2,
+                20712, 0,
+
+                21152, 1, // P-p-p-p-p-p-p-p-
+                21510, 2,
+                21898, 1,
+                22280, 2,
+
+                22646, 1, // peanut butter high-ho
+                23011, 1,
+                23345, 0,
+                23713, 0,
+                23713, 2,
+
+                24091, -1, // [STAGE 2]
+
+                24514, 2, // Hungry hippo, hungry, hungry hippo
+                24875, 0,
+                25447, 2,
+                26023, 2,
+                26358, 0,
+                26795, 1, // (High-ho!)
+                27111, 1,
+
+                27521, 2, // Hungry hippo, hungry, hungry hippo
+                27871, 0,
+                28402, 2,
+                29004, 2,
+                29414, 0,
+                29794, 1,
+                30159, 1, // (High-ho!)
+
+                30491, 2, // Hungry hippo, hungry, hungry, hippo
+                30912, 0,
+                31514, 2,
+                32068, 2,
+                32388, 0,
+                32775, 1, // (High-ho!)
+                33152, 1,
+
+                33573, 0, // Hungry hippo, hungry, hungry hippo
+                33912, 2,
+                34480, 0,
+                35049, 0,
+                35436, 2,
+
+                36229, 0,
+                36778, 2,
+                37544, 0,
+                37909, 2,
+                38292, 0,
+                38468, 2,
+                38859, 1,
+
+                39243, 2,
+                39808, 0,
+                40539, 2,
+                40931, 0,
+                41287, 2,
+                41479, 0,
+                41876, 1,
+
+                // High-ho!
+
+                42216, 0,
+                42825, 2,
+                43547, 0,
+                43948, 2,
+                44296, 0,
+                44505, 2,
+                44861, 1,
+
+                // High-ho!
+
+                45244, 2,
+                45845, 0,
+                46028, 2,
+
+                46404, -1, // [STAGE 3]
+
+                46760, 1, // Peanut butter high-ho
+                47152, 1,
+                47505, 0,
+                47865, 2,
+
+                // (High-ho)
+
+                49786, 1, // Peanut butter-high
+                50165, 1,
+                50480, 0,
+
+                50897, 1, // Peanut butter-high
+                51296, 1,
+                51668, 2,
+
+                52048, 1, // Peanut butter
+                52440, 1,
+
+                52806, 1, // Peanut butter-high
+                53204, 1,
+                53532, 0,
+
+                53943, 1, // Peanut butter-high
+                54322, 1,
+                54680, 2,
+
+                55061, 1, // Peanut butter
+                55440, 1,
+
+                55858, 1, // Peanut butter-high
+                56211, 1,
+                56519, 0,
+
+                56943, 1, // Peanut butter-high
+                57320, 1,
+                57657, 2,
+
+                58074, 1, // Peanut butter
+                58472, 1,
+
+                58897, 2, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+                59265, 0,
+                59629, 2,
+                59986, 0,
+                60365, 2,
+                60743, 0,
+                61116, 2,
+                61501, 0,
+
+                61876, 1, // Peanut butter-high
+                62248, 1,
+                62594, 0,
+
+                63003, 1, // Peanut butter-high
+                63375, 1,
+                63703, 2,
+
+                64124, 1, // Peanut butter
+                64502, 1,
+
+                64817, -1, // [STAGE 4]
+
+                64910, 2, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+                65093, 1,
+                65297, 2,
+                65485, 1,
+                65667, 2,
+                65854, 1,
+                66043, 2,
+                66241, 1,
+                66422, 2,
+                66619, 1,
+                66800, 2,
+                66994, 1,
+                67174, 2,
+                67357, 1,
+                67553, 2,
+                67737, 1,
+
+                67931, 0, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+                68112, 1,
+                68307, 0,
+                68495, 1,
+                68684, 0,
+                68874, 1,
+                69063, 0,
+                69260, 1,
+                69438, 0,
+                69629, 1,
+                69817, 0,
+                70018, 1,
+                70194, 0,
+                70375, 1,
+                70576, 0,
+                70755, 1,
+
+                70965, 2, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+                71140, 1,
+                71332, 2,
+                71515, 1,
+                71710, 2,
+                71894, 1,
+                72096, 2,
+                72270, 1,
+                72456, 2,
+                72626, 1,
+                72843, 2,
+                73030, 1,
+                73213, 2,
+                73400, 1,
+                73601, 2,
+                73783, 1,
+
+                73977, 0, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+                74160, 1,
+                74342, 0,
+                74527, 1,
+                74726, 0,
+                74912, 1,
+                75108, 0,
+                75282, 1,
+                75478, 0,
+                75661, 1,
+                75861, 0,
+                76045, 1,
+                76228, 0,
+                76428, 1,
+                76616, 0,
+                76805, 1,
+
+                76994, 2, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+                77172, 1,
+                77364, 2,
+                77551, 1,
+                77744, 2,
+                77930, 1,
+                78130, 2,
+                78314, 1,
+                78493, 2,
+                78686, 1,
+                78870, 2,
+                79071, 1,
+                79268, 2,
+                79446, 1,
+                79641, 2,
+                79829, 1,
+
+                80009, 0, // P-p-p-p-p-p-p-p-p-p-p-p-p-p-p-p
+                80194, 1,
+                80382, 0,
+                80576, 1,
+                80763, 0,
+                80947, 1,
+                81137, 0,
+                81336, 1,
+                81515, 0,
+                81705, 1,
+                81882, 0,
+                82094, 1,
+                82268, 0,
+                82459, 1,
+                82660, 0,
+                82840, 1,
+
+                83767, 1, // Peanut butter high-ho
+                84109, 1,
+                84456, 0,
+                84842, 2,
+
+                // god save me from that heck
+            }
+        };
+
     
 
 }
@@ -782,7 +1189,7 @@ public class SongData : MonoBehaviour
     }
     public static List<Song> GetAllSongs() // returns a Song list of every level
     {
-        List<Song> levelsList = new List<Song>();
+        List<Song> levelsList = new();
         foreach (KeyValuePair<string, Song> song in levels) // for every level
         {
             levelsList.Add(song.Value);
