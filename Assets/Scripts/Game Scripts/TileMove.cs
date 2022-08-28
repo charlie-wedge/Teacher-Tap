@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script is found on every tile. It moves the tile in a single direction based on the speed (stage). It also calculates the distance when pressed, to tell the score script how close they were to the 'sweet spot'
+
 public class TileMove : MonoBehaviour
 {
     private float timeAtStart;
@@ -23,7 +25,7 @@ public class TileMove : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + mySpeed * Time.deltaTime * -1);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // we have entered the 'sweet spot'
     {
         if (other.CompareTag("Zone"))
         {
@@ -31,7 +33,7 @@ public class TileMove : MonoBehaviour
            // print("That took " + (Time.timeSinceLevelLoad - timeAtStart) + " seconds!");
         }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other) // we have left the 'sweet spot'
     {
         if (other.CompareTag("Zone"))
         {
@@ -47,9 +49,9 @@ public class TileMove : MonoBehaviour
         if (inZone)
         {
             float zPos = transform.position.z;
-            float tileOffsetWithZone = Mathf.Abs(zPos - zoneZPos);
+            float tileOffsetWithZone = Mathf.Abs(zPos - zoneZPos); // the absolute distance from us and the 'sweet spot'
 
-            if (tileOffsetWithZone < 0.15f)
+            if (tileOffsetWithZone < 0.15f) // if we're within 0.15f from the 'sweet spot', count it as a perfect score
             {
                 res = 3; // perfect
                 print("Perfect!");

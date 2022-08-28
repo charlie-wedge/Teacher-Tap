@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script allows the player to scroll both up and down, (level select), and left and right, (menu to menu).
+
 public class LevelSelectionScroll : MonoBehaviour
 {
     public RectTransform scrollableObject;

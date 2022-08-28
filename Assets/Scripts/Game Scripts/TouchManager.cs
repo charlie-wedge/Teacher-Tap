@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// This script manages the touch when playing. It calls a function on the TileMove script when that tile is pressed, which causes the score to change
+
 public class TouchManager : MonoBehaviour
 {
 
@@ -41,14 +43,14 @@ public class TouchManager : MonoBehaviour
                         //raycastHit.collider.GetComponent<TileMove>().TileReleased();
                     }
                 }
-                else if (tag == "Beginning Tile")
+                else if (tag == "Beginning Tile") // the two tiles at the start of the game which are required to be held down to start..
                 {
-                    if (touchType == TouchPhase.Began)
+                    if (touchType == TouchPhase.Began) // tell the LevelManager one of them is being held down
                     {
                         raycastHit.collider.GetComponent<Animation>().Play("Beginning Tile Held Down");
                         levelManagerScript.BeginningTilePressed(true);
                     }
-                    else if (touchType == TouchPhase.Ended)
+                    else if (touchType == TouchPhase.Ended) // tell the LevelManager one of them is no-longer being held down
                     {
                         raycastHit.collider.GetComponent<Animation>().Play("Beginning Tiles Flash");
                         levelManagerScript.BeginningTilePressed(false);

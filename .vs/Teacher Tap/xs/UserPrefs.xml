@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{75977A2F-C688-12D5-EF89-DB09D5337611}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Menu Scripts/MenuManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game Scripts/GameManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Menu Scripts/MenuManager.cs" Line="36" Column="1" />
       <File FileName="Assets/Scripts/Game Scripts/LevelManager.cs" />
-      <File FileName="Assets/Scripts/Game Scripts/GameManager.cs" />
-      <File FileName="Assets/Scripts/Game Scripts/SongData.cs" Line="1167" Column="26" />
+      <File FileName="Assets/Scripts/Game Scripts/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game Scripts/SongData.cs" />
       <File FileName="Assets/Scripts/Game Scripts/EndScreenProgressBar.cs" />
       <File FileName="Assets/Scripts/Game Scripts/Score.cs" />
       <File FileName="Assets/Scripts/Menu Scripts/LevelSelectionScroll.cs" />
@@ -13,7 +13,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bfe03a45-f5ed-40ff-b720-6f90209a4e95" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7eebd722-72e7-4681-bf68-f19d22148f30" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

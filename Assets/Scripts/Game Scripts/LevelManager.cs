@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// This is the main script of the game. It manages the level while it's playing. EG: the tile spawning, song etc.
+
 public class LevelManager : MonoBehaviour
 {
     public AudioSource audioSource;
@@ -90,7 +92,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (checkForTiles)
+        if (checkForTiles) // if we're currently playing the game...
         {
             CheckTile();
         }
@@ -115,10 +117,10 @@ public class LevelManager : MonoBehaviour
 
     
 
-    public void StartLevel()
+    public void StartLevel() // start the song!
     {
         beginningTilesEmptyObject.SetActive(false);
-        albumArtAnimation.Play("Album Art to Black Circle");
+        albumArtAnimation.Play("Album Art to Black Circle"); // show the score UI
 
         tileData = songData.tileData;
         //int firstTileTime = tileData[0];
@@ -130,11 +132,11 @@ public class LevelManager : MonoBehaviour
 
         checkForTiles = true;
 
-        Invoke(nameof(PlaySong), GetDelay(true));
+        Invoke(nameof(PlaySong), GetDelay(true)); // start the song at an offset to cater for the time it takes for the tile to reach the player after spawning (keeps everything synced)
 
     }
 
-    private void PlaySong()
+    private void PlaySong() // play the song file
     {
         AudioClip audio = songData.audioClip;
         audioSource.clip = audio; // set the clip to the source in unity
@@ -143,11 +145,11 @@ public class LevelManager : MonoBehaviour
         print("Playing audio file");
     }
 
-    private float GetAudioTime()
+    private float GetAudioTime() // get the timestamp of the song we're currently at
     {
         return audioSource.time * 1000;
     }
-    private float GetRealTime()
+    private float GetRealTime() // get the time
     {
         return Time.timeSinceLevelLoad * 1000;
     }
@@ -169,15 +171,16 @@ public class LevelManager : MonoBehaviour
         tileObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = currentTeacherImages[index]; // set the image of the tile
     }
 
-    private void CheckTile()
+    private void CheckTile() // check what this new tile data is about
     {
         float currentTime;
+        // how should we base the timing of this tile?:
         if (audioSource.isPlaying) // base the timing off the audio
         {
             currentTime = GetAudioTime() + GetDelay(false);
             //print("Audio Time: " + currentTime);
         }
-        else // base the timing off the real time (because the song hasn't started yet so we ofc can't base it on the audio)
+        else // base the timing off the real time (because the song hasn't started yet so we of course can't base it on the audio)
         {
             currentTime = GetRealTime() - timeAtLevelStart + 123.34f; // this number could cause problems on other devices?? (The gap between the switch from real time to audio time)
             //print("Real Time: " + currentTime);
@@ -185,9 +188,9 @@ public class LevelManager : MonoBehaviour
    
         int tileTimeIndex = currentTileNum * 2;
 
-        if (tileTimeIndex >= tileData.Length)
+        if (tileTimeIndex >= tileData.Length) // if we've reached the end of all the tiles
         {
-            if (!audioSource.isPlaying)
+            if (!audioSource.isPlaying) // if the song has also finished playing
             {
                 checkForTiles = false;
                 Invoke("EndLevel", endLevelDelay);
@@ -200,11 +203,11 @@ public class LevelManager : MonoBehaviour
             int tilePosIndex = tileData[tileTimeIndex + 1];
             if (tilePosIndex >= 0) // it's an actual tile
             {
-                SpawnTile(tilePosIndex);
+                SpawnTile(tilePosIndex); // spawn the tile
             }
             else // it's a command
             {
-                CheckForCommand(tilePosIndex);
+                CheckForCommand(tilePosIndex); // do the command
             }
 
 
@@ -213,7 +216,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void EndLevel()
+    private void EndLevel() // show the end screen
     {
         print("Reached the end of the tile data");
         for (int i = 0; i < endScreenAnimationComponents.Length; i++) // play all the end screen animations at once, (the delays are present in the actual animation itself)
@@ -236,11 +239,11 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    private void CheckForCommand(int commandNum)
+    private void CheckForCommand(int commandNum) // act on the command we've received
     {
         switch (commandNum)
         {
-            case -1:
+            case -1: // -1 = next stage
                 print("Increasing speed!");
                 speed++;
                 scoreScript.StartNextStage();
@@ -251,13 +254,13 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void NextTile()
+    private void NextTile() // we've spawned a tile, let's prepare for the next
     {
         currentTileNum++;
         CheckTile();
     }
 
-    public float GetDelay(bool seconds)
+    public float GetDelay(bool seconds) // get the delay between when we should spawn the tile, and when it will actually arrive to the player
     {
         float res;
         if (seconds) // seconds
@@ -273,7 +276,7 @@ public class LevelManager : MonoBehaviour
 
     public static int GetTeacherImages(string teacherName) // static because the MenuManager also uses this function from another scene
     {
-        switch (teacherName)
+        switch (teacherName) // return the index of the teacher, based on the string
         {
             case "Briggs":
                 return 0;

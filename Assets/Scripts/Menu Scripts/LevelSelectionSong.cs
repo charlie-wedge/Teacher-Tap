@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// this script changes the currently selected song if a new song is pressed in the level select menu.
+
 public class LevelSelectionSong : MonoBehaviour
 {
 
@@ -13,7 +15,7 @@ public class LevelSelectionSong : MonoBehaviour
 
     private Song thisSong;
 
-    public void SetSong(Song song)
+    public void SetSong(Song song) // set a new song to the main menu
     {
         thisSong = song;
         albumArtImage.sprite = song.albumArt;

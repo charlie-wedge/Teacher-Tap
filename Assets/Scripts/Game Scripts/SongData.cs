@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script holds the data of each level. For example, when each tile should be spawned within a song. It also allows other scripts to access this information through the GetSongData() and GetAllSongs() functions
+
 public class SongData : MonoBehaviour
 {
     public static bool alreadyInstance = false; // don't destroy on load stuff
@@ -1183,7 +1185,7 @@ public class SongData : MonoBehaviour
 }
 
 
-    public static Song GetSongData()
+    public static Song GetSongData() // get the data for the currently selected song
     {
         return levels[LevelManager.newLevelName];
     }
@@ -1198,11 +1200,11 @@ public class SongData : MonoBehaviour
     }
 }
 
-public class Song
+public class Song // a custom class for a single song
 {
     public int[] tileData;
     public AudioClip audioClip;
-    public int timeAtKeyPoint;
+    public int timeAtKeyPoint; // the point the song should play at when selected in the main menu
     public string songName;
     public string songArtist;
     public Sprite albumArt;

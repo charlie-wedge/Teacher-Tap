@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// this script keeps track of the game's score, and allows other scripts to easily change it too.
+
 public class Score : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI scoreText;
@@ -35,19 +37,19 @@ public class Score : MonoBehaviour
         scoreText.text = score.ToString("n0"); // make the number nice with commas
     }
 
-    public void ConfigVariables(int numOfTiles)
+    public void ConfigVariables(int numOfTiles) // set up the variables before use, called from LevelManager
     {
         numOfTilesInLevel = numOfTiles;
         scoreOffset = Mathf.FloorToInt(maxScore / numOfTilesInLevel);
     }
 
-    public void StartNextStage()
+    public void StartNextStage() // our stage has changed, called from LevelManager
     {
         float delay = levelManager.GetDelay(true);
         Invoke("NextStage", delay);
     }
     
-    private void NextStage()
+    private void NextStage() // our stage has changed
     {
         stage++;
         //LevelManager.speed++;
@@ -67,7 +69,7 @@ public class Score : MonoBehaviour
         string text = "";
         float offset = 0f;
 
-        switch (res)
+        switch (res) // how well did we press the tile?
         {
             case 0: // missed
                 text = "Missed";

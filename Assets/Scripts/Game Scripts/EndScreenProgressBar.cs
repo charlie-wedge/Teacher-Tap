@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// this function makes smooth progress bars when passed in an input. It does this by changing the width of a UI element in a linear format. It's used on the end screen, and main menu for the teacher's XP levels.
+
 public class EndScreenProgressBar : MonoBehaviour
 {
 
@@ -31,18 +33,18 @@ public class EndScreenProgressBar : MonoBehaviour
         StartCoroutine(MoveProgressBar());
     }
 
-    private IEnumerator MoveProgressBar()
+    private IEnumerator MoveProgressBar() // move the progress bar
     {
-        if (targetPercentage < 0 || targetPercentage > 1 || startingPercentage < 0 || startingPercentage > 1)
+        if (targetPercentage < 0 || targetPercentage > 1 || startingPercentage < 0 || startingPercentage > 1) // boundary checks
         {
             Debug.LogWarning("EndScreenProgressBar script: Percentage must be between 0-1. It's currently " + targetPercentage + " and " + startingPercentage);
         }
 
-        while (currentPercentage < targetPercentage)
+        while (currentPercentage < targetPercentage) // while we still need to move the progress bar...
         {
-            currentPercentage += stepOffset;
-            UpdateProgress(currentPercentage);
-            yield return new WaitForSeconds(stepTime);
+            currentPercentage += stepOffset; // increment the progress bar
+            UpdateProgress(currentPercentage); // update the UI
+            yield return new WaitForSeconds(stepTime); // wait a delay until we increment again
         }
         print("Finished moving progress bar to " + (targetPercentage*100) + "%, (lost " + ((targetPercentage*100) - (currentPercentage*100)) + "% of precision)");
 
@@ -52,17 +54,18 @@ public class EndScreenProgressBar : MonoBehaviour
         }
     }
 
+    // update the UI
     private void UpdateProgress(float percentage) // percentage is basically the score
     {
         float targetProgress = percentage * maxWidth;
         Vector3 newTransfPos;
         Vector2 newRectSize;
-        if (width)
+        if (width) // if the progress bar is width-ways
         {
             newTransfPos = new Vector3((targetProgress / 2) - (maxWidth / 2), transf.localPosition.y, transf.localPosition.z);
             newRectSize = new Vector2(targetProgress, rectTransform.sizeDelta.y); ;
         }
-        else
+        else // if the progress bar is height-ways
         {
             newTransfPos = new Vector3(transf.localPosition.x, (targetProgress / 2) - (maxWidth / 2), transf.localPosition.z);
             newRectSize = new Vector2(rectTransform.sizeDelta.x, targetProgress);

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// The GameManager is the middle man between scenes - it helps other scripts to talk with each other, and manages a few buttons on the "Level Complete" screen.
+
 public class GameManager : MonoBehaviour
 {
 
@@ -27,19 +29,19 @@ public class GameManager : MonoBehaviour
     }
 
     private int newBuildIndex;
-    public void PlayAgainButtonPressed()
+    public void PlayAgainButtonPressed() // from the end screen button
     {
         ExitLevelCompleteScreen();
         newBuildIndex = 1;
         Invoke(nameof(ChangeScene), 1.1f);
     }
-    public void ContinueButtonPressed()
+    public void ContinueButtonPressed() // from the end screen button
     {
         ExitLevelCompleteScreen();
         newBuildIndex = 0;
         Invoke(nameof(ChangeScene), 1.1f);
     }
-    private void ChangeScene()
+    private void ChangeScene() // invoked from above
     {
         sceneLoader.LoadScene(newBuildIndex);
     }

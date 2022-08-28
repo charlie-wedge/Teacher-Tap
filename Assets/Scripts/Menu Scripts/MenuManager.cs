@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// This script manages the main menu of the game. It holds the public functions for the buttons, and ensures the correct song plays in the game.
+
 public class MenuManager : MonoBehaviour
 {
     private Song songData;
@@ -59,15 +61,15 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    private void ConfigMainMenu()
+    private void ConfigMainMenu() // set up the main menu based on the level
     {
         songData = SongData.GetSongData();
 
         Color levelColour = songData.levelColour;
-        background.color = levelColour;
-        teacherImage.sprite = teacherImagesToUse[LevelManager.GetTeacherImages(songData.teacher)];
-        teacherImageOverlay.color = levelColour;
-        teacherNameText.text = songData.teacher;
+        background.color = levelColour; // background colour
+        teacherImage.sprite = teacherImagesToUse[LevelManager.GetTeacherImages(songData.teacher)]; // teacher icon
+        teacherImageOverlay.color = levelColour; // to make the teacher cicle
+        teacherNameText.text = songData.teacher; // teacher name
         float lighterOffset = 1.1f;
         levelCounterBackgroundColour.color = new Color(levelColour.r * lighterOffset, levelColour.g * lighterOffset, levelColour.b * lighterOffset);
         float darkerOffset = 0.9f;
@@ -85,14 +87,14 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    public void PlayButtonPressed()
+    public void PlayButtonPressed() // the user wants to play the level
     {
         print("Play button pressed!");
         foreach (Animation animation in playAnimations) // animations to hide the menu
         {
             animation.Play();
         }
-        loadGameSceneCoroutine = StartCoroutine(StartLoadingGame());
+        loadGameSceneCoroutine = StartCoroutine(StartLoadingGame()); // start loading the game scene
     }
     private IEnumerator StartLoadingGame()
     {
@@ -106,7 +108,7 @@ public class MenuManager : MonoBehaviour
         while (true) // wait until the scene is loaded
         {
             //print(asyncLoad.progress);
-            if (asyncLoad.progress >= 0.9f)
+            if (asyncLoad.progress >= 0.9f) // if it has loaded..
             {
                 GameSceneLoaded(asyncLoad);
                 StopCoroutine(loadGameSceneCoroutine);
@@ -115,7 +117,7 @@ public class MenuManager : MonoBehaviour
             
         }
     }
-    private void GameSceneLoaded(AsyncOperation asyncLoad)
+    private void GameSceneLoaded(AsyncOperation asyncLoad) // load the game scene
     {
         print("Loaded Game Scene");
         /*
@@ -128,7 +130,7 @@ public class MenuManager : MonoBehaviour
     }
 
 
-    public void AllSongsButtonPressed() // hide the main menu and go to the song selection menu
+    public void AllSongsButtonPressed() // hide the main menu and go to the song selection menu, public so a button can call it
     {
         print("All Songs button pressed!");
         if (!songSelectionEmptyObject.activeSelf) // if this menu hasn't yet been created, then create it!
@@ -136,12 +138,15 @@ public class MenuManager : MonoBehaviour
             songSelectionEmptyObject.SetActive(true);
             levels = SongData.GetAllSongs(); // levels is a global variable
             float currentPosY = 0f;
-            foreach (Song level in levels)
+            foreach (Song level in levels) // for every possible song...
             {
+                // get the UI object for the level selection
                 GameObject levelObject = Instantiate(songSelectionSongPrefab, songSelectionSongPrefab.transform.position, songSelectionSongPrefab.transform.rotation, songSelectionParent);
+                // set its position to be under the last
                 levelObject.transform.localPosition = new Vector3(songSelectionSongPrefab.transform.position.x, songSelectionSongPrefab.transform.position.y + currentPosY, songSelectionSongPrefab.transform.position.z);
+                // set up the UI to match that of the song
                 levelObject.GetComponent<LevelSelectionSong>().SetSong(level);
-                currentPosY -= levelObjectOffsetY;
+                currentPosY -= levelObjectOffsetY; // update the offset
             }
         }
         mainMenuAnimationComponent.Play("Main Menu to Song Selection");
@@ -151,7 +156,7 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    public void NewSongSelected()
+    public void NewSongSelected() // the user has selected a new song in the song selection menu. Called from another script, hence why public
     {
         if (!scrollScript.moved) // only do the press if the user isn't scrolling
         {
